@@ -7,7 +7,7 @@ export type IncomingParams = {
   inStockOnly?: boolean;
   limit?: number;
   q?: string;
-  token: string;
+  token: string | undefined;
 };
 
 export type IncomingStyles = {
