@@ -7,7 +7,12 @@ import { SupPartResultSet } from "../modules/graphql/generated";
 import NoResultsFound from "./NoResultsFound";
 import WebFont from "webfontloader";
 import Footer from "./Footer";
-import { IncomingParams, IncomingStyles, IncomingColors } from "../types";
+import {
+  IncomingParams,
+  IncomingStyles,
+  IncomingColors,
+  IncomingColumns,
+} from "../types";
 
 const lightTheme: IncomingColors = {
   background: "#FFFFFF",
@@ -42,9 +47,10 @@ const darkTheme: IncomingColors = {
 type Props = {
   searchParameters: IncomingParams;
   styles?: IncomingStyles;
+  hideColumns?: IncomingColumns;
 };
 
-export const GpaTool = ({ searchParameters, styles }: Props) => {
+export const GpaTool = ({ searchParameters, styles, hideColumns }: Props) => {
   const theme =
     styles?.customColors ?? (styles?.theme === "dark" ? darkTheme : lightTheme);
   const [query, setQuery] = useState<string>(searchParameters.q || "");
@@ -113,6 +119,7 @@ export const GpaTool = ({ searchParameters, styles }: Props) => {
           data={response}
           searchParameters={searchParameters}
           theme={theme}
+          hideColumns={hideColumns}
         />
       )}
       {!hasResults && (

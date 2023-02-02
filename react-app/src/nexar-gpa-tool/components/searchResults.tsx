@@ -2,7 +2,7 @@ import { SupPartResultSet } from "../modules/graphql/generated";
 import styled from "styled-components";
 import Part from "./part";
 import Sponsored from "./sponsored";
-import { IncomingColors, IncomingParams } from "../types";
+import { IncomingColors, IncomingColumns, IncomingParams } from "../types";
 import { deviceWidths } from "../lib";
 
 type ResultsProps = {
@@ -12,6 +12,7 @@ type ResultsProps = {
   data: SupPartResultSet | undefined;
   searchParameters: IncomingParams;
   theme: IncomingColors;
+  hideColumns?: IncomingColumns;
 };
 
 const SearchResults = ({
@@ -21,6 +22,7 @@ const SearchResults = ({
   data,
   searchParameters,
   theme,
+  hideColumns,
 }: ResultsProps) => {
   if (!data || (data && !data.results)) {
     return <></>;
@@ -46,6 +48,7 @@ const SearchResults = ({
                 searchParameters={searchParameters}
                 key={result.part.id}
                 theme={theme}
+                hideColumns={hideColumns}
               />
             ))}
           </div>

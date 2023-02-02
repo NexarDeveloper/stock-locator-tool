@@ -169,7 +169,7 @@ const InputContainer = styled.a`
   padding: 0 4px;
   @media (max-width: ${deviceWidths.phone}) {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 `;
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { deviceWidths } from "../../../../lib";
 import { SupOffer as OfferType } from "../../../../modules/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
@@ -34,7 +35,9 @@ const StyledSku = styled.div`
     text-overflow: ellipsis;
     overflow: hidden;
     display: block;
-    max-width: 75px;
+    @media (max-width: ${deviceWidths.phone}) {
+      max-width: 50px;
+    }
   }
 `;
 

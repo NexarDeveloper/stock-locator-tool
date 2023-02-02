@@ -4,7 +4,7 @@ var cors = require("cors");
 const app = express();
 
 const nx = require("./nexarClient");
-const nexar = new nx.NexarClient("(Your client id)", "(Your client secret)");
+const nexar = new nx.NexarClient("", "");
 
 const port = 5000;
 

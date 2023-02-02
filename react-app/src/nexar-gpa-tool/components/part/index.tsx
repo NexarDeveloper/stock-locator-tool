@@ -9,7 +9,7 @@ import PhoneOffersTable from "./PhoneOffersTable";
 import ShowButton from "./ShowButton";
 import styled from "styled-components";
 import { deviceWidths } from "../../lib";
-import { IncomingColors, IncomingParams } from "../../types";
+import { IncomingColors, IncomingColumns, IncomingParams } from "../../types";
 
 const maxSellersInCompactView = 5;
 
@@ -20,6 +20,7 @@ type Props = {
   result: Result;
   searchParameters: IncomingParams;
   theme: IncomingColors;
+  hideColumns?: IncomingColumns;
 };
 
 const Part = ({
@@ -29,6 +30,7 @@ const Part = ({
   result,
   searchParameters,
   theme,
+  hideColumns,
 }: Props) => {
   const {
     expansions,
@@ -63,6 +65,7 @@ const Part = ({
             result={result}
             sellers={slicedSellers}
             theme={theme}
+            hideColumns={hideColumns}
           />
         )}
         {slicedSellers.length > 0 && !isDesktop && (

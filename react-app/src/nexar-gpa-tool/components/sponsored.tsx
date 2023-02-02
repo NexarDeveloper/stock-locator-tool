@@ -24,13 +24,9 @@ const Sponsored = ({ theme }: SponsoredProps) => {
           data-event="click focus"
           onMouseOut={handleMouseOut}
           onMouseOver={handleMouseOver}
-          style={{
-            backgroundColor: "white",
-            border: `1px solid black`,
-          }}
         >
           <TooltipContent>
-            <TooltipText style={{ color: "black" }}>
+            <TooltipText>
               Nexar is compensated by the distributors listed here, and payment
               is one of several factors used to rank the order that distributors
               are listed in. As a free service, Nexar relies on sponsorship from
@@ -56,6 +52,7 @@ const SponsoredContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 20px;
+  position: relative;
 
   span {
     font-size: 13px;
@@ -75,8 +72,10 @@ const Tooltip = styled.div`
   border-radius: 4px;
   display: block;
   position: absolute;
-  right: 10px;
-  top: 120px;
+  right: 0px;
+  top: 40px;
+  background-color: white;
+  border: 1px solid black;
 
   &:before {
     right: 35px;
@@ -104,6 +103,7 @@ const TooltipContent = styled.div`
 const TooltipText = styled.div`
   font-size: 12px;
   line-height: 15px;
+  color: black;
 `;
 
 export default Sponsored;

@@ -43,39 +43,24 @@ export const SelectDropdown = ({
               tabIndex={0}
               type="button"
               style={{
-                backgroundColor: "white",
                 border: `1px solid ${theme.tint}`,
-                color: "black",
               }}
             >
               <>{displayText}</>
               {isOpen ? <TriangleUp /> : <TriangleDown />}
             </CountryDropdownTitle>
-            <CountryDropdownOptions
-              style={{ backgroundColor: theme.background }}
-            >
+            <CountryDropdownOptions>
               {isOpen &&
                 options.map((option) => (
                   <li key={option.value}>
                     {value === option.value ? (
-                      <DropdownOption
-                        style={{
-                          borderTop: `1px solid grey`,
-                          color: "black",
-                          backgroundColor: "white",
-                        }}
-                      >
+                      <DropdownOption>
                         <OptionText>{option.text}</OptionText>
                       </DropdownOption>
                     ) : (
                       <DropdownOption
                         onClick={() => handleOptionClick(option.value)}
                         type="button"
-                        style={{
-                          borderTop: `1px solid grey`,
-                          color: "black",
-                          backgroundColor: "white",
-                        }}
                       >
                         <OptionText>{option.text}</OptionText>
                       </DropdownOption>
@@ -92,26 +77,18 @@ export const SelectDropdown = ({
               tabIndex={0}
               type="button"
               style={{
-                backgroundColor: "white",
                 border: `1px solid ${theme.tint}`,
-                color: "black",
               }}
             >
               <div>{displayText}</div>
               {isOpen ? <TriangleUp /> : <TriangleDown />}
             </DropdownTitle>
-            <DropdownOptions style={{ backgroundColor: theme.background }}>
+            <DropdownOptions>
               {isOpen &&
                 options.map((option) => (
                   <li key={option.value}>
                     {value === option.value ? (
-                      <DropdownOption
-                        style={{
-                          borderTop: `1px solid grey`,
-                          color: "black",
-                          backgroundColor: "white",
-                        }}
-                      >
+                      <DropdownOption>
                         <OptionText>
                           {option.value} - {option.text}
                         </OptionText>
@@ -120,11 +97,6 @@ export const SelectDropdown = ({
                       <DropdownOption
                         onClick={() => handleOptionClick(option.value)}
                         type="button"
-                        style={{
-                          borderTop: `1px solid grey`,
-                          color: "black",
-                          backgroundColor: "white",
-                        }}
                       >
                         <OptionText>
                           {option.value} - {option.text}
@@ -143,6 +115,10 @@ export const SelectDropdown = ({
 
 const DropdownContainer = styled.div`
   position: relative;
+  @media (max-width: ${deviceWidths.phone}) {
+    width: 100%;
+    margin-bottom: 4px;
+  }
 `;
 
 const DropdownTitle = styled.button`
@@ -153,6 +129,8 @@ const DropdownTitle = styled.button`
   justify-content: space-between;
   align-items: center;
   border-radius: 4px;
+  background-color: white;
+  color: black;
 
   div {
     margin-right: 24px;
@@ -201,6 +179,7 @@ const DropdownOptions = styled.ul`
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 0;
+  background-color: white;
 
   li {
     margin: 0;
@@ -215,6 +194,8 @@ const DropdownOption = styled.button`
   font-family: inherit;
   width: 100%;
   text-align: left;
+  margin: 2px 0px;
+  background-color: white;
 
   @media (max-width: ${deviceWidths.phone}) {
     max-width: 190px;
@@ -224,15 +205,14 @@ const DropdownOption = styled.button`
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.row1};
     cursor: pointer;
+    background-color: #f4f2f1;
   }
 `;
 
 const OptionText = styled.span`
   overflow-wrap: normal;
   display: inline-block;
-  color: ${(props) => props.theme.text};
   font-size: 12px;
   line-height: 16px;
 `;
