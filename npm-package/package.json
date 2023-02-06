@@ -1,7 +1,7 @@
 {
-  "name": "nexar-gpa-tool-test",
-  "version": "1.0.8",
-  "description": "",
+  "name": "@altiumnexar/gpa-tool",
+  "version": "1.0.0",
+  "description": "Provides a react component for a Global Price & Availability Tool powered by Nexar.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
     "build": "npm run clean && tsc && npm run copy"
   },
   "keywords": [],
-  "author": "",
+  "author": "rowmur",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.0.27",
