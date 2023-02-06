@@ -2,7 +2,7 @@ const { URLSearchParams } = require("url");
 const https = require("https");
 
 const TOKEN_OPTIONS = {
-  hostname: "identity.nexaruat.com",
+  hostname: "identity.nexar.com",
   path: "/connect/token",
   method: "POST",
   headers: {

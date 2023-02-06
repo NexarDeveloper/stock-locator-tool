@@ -1,6 +1,6 @@
 import { IncomingParams } from "./types";
 
-const endpoint = "https://api.nexaruat.com/graphql/";
+const endpoint = "https://api.nexar.com/graphql/";
 
 export const runQuery = async (searchParameters: IncomingParams) => {
   return await fetch(endpoint, {
