@@ -11,7 +11,7 @@ const Sponsored = ({ theme }) => {
         isHovered && (React.createElement(Tooltip, { "data-event": "click focus", onMouseOut: handleMouseOut, onMouseOver: handleMouseOver },
             React.createElement(TooltipContent, null,
                 React.createElement(TooltipText, null,
-                    "Nexar is compensated by the distributors listed here, and payment is one of several factors used to rank the order that distributors are listed in. As a free service, Nexar relies on sponsorship from advertisers including distributors and manufacturers. Visit our",
+                    "Octopart is compensated by the distributors listed here, and payment is one of several factors used to rank the order that distributors are listed in. As a free service, Octopart relies on sponsorship from advertisers including distributors and manufacturers. Visit our",
                     " ",
                     React.createElement("a", { href: "https://octopart.com/faq#how-does-octopart-make-money", target: "_blank", rel: "noreferrer", style: { color: theme.button } }, "FAQ"),
                     " ",

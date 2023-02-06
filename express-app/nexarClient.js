@@ -71,7 +71,7 @@ class NexarClient {
     this.#secret = secret;
   }
 
-  #getAccessToken(id, secret, scope) {
+  #getAccessToken(id, secret) {
     const data = new URLSearchParams({
       grant_type: "client_credentials",
       client_id: id,

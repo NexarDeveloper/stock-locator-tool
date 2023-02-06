@@ -1,6 +1,6 @@
 {
   "name": "@altiumnexar/gpa-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides a react component for a Global Price & Availability Tool powered by Nexar.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,10 @@
   "author": "rowmur",
   "license": "ISC",
   "devDependencies": {
+    "@types/country-list": "^2.1.1",
+    "@types/date-fns": "^2.6.0",
     "@types/react": "^18.0.27",
+    "@types/styled-components": "^5.1.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.9.5"

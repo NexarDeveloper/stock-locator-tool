@@ -24,8 +24,7 @@ const App = () => {
         limit: 10,
       }}
       styles={{
-        // font: "Comic Neue",
-        theme: "dark",
+        font: "Comic Neue",
         // customColors: {
         //   background: "#F4F2F1",
         //   button: "#3671B0",

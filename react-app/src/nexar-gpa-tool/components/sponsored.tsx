@@ -27,10 +27,11 @@ const Sponsored = ({ theme }: SponsoredProps) => {
         >
           <TooltipContent>
             <TooltipText>
-              Nexar is compensated by the distributors listed here, and payment
-              is one of several factors used to rank the order that distributors
-              are listed in. As a free service, Nexar relies on sponsorship from
-              advertisers including distributors and manufacturers. Visit our{" "}
+              Octopart is compensated by the distributors listed here, and
+              payment is one of several factors used to rank the order that
+              distributors are listed in. As a free service, Octopart relies on
+              sponsorship from advertisers including distributors and
+              manufacturers. Visit our{" "}
               <a
                 href="https://octopart.com/faq#how-does-octopart-make-money"
                 target="_blank"
