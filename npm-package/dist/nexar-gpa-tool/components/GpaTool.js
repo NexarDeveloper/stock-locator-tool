@@ -71,7 +71,7 @@ export const GpaTool = ({ searchParameters, styles, hideColumns }) => {
     const hasResults = response && response.results;
     const [font, setFont] = useState("");
     useEffect(() => {
-        let wantedFont = (styles === null || styles === void 0 ? void 0 : styles.font) || "Roboto";
+        let wantedFont = (styles === null || styles === void 0 ? void 0 : styles.font) || "Inter";
         WebFont.load({
             google: {
                 families: [`${wantedFont}`],
