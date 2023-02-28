@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { getPriceAtQty } from "../../../../../lib";
-import { SupOffer as OfferType } from "../../../../../modules/graphql/generated";
+import { SupOffer as OfferType } from "../../../../../lib/graphql/generated";
 
 type Props = {
   country: string;

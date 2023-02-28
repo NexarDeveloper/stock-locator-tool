@@ -3,7 +3,7 @@ import PhoneOffer from "./PhoneOffer";
 import {
   SupPartResult as ResultType,
   SupPartSeller as SellerType,
-} from "../../../modules/graphql/generated";
+} from "../../../lib/graphql/generated";
 import { IncomingColors } from "../../../types";
 
 type Props = {

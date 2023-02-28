@@ -91,7 +91,7 @@ export const GpaTool = ({ searchParameters, styles, hideColumns }: Props) => {
     let wantedFont = styles?.font || "Inter";
     WebFont.load({
       google: {
-        families: [`${wantedFont}`],
+        families: [wantedFont],
       },
     });
     setFont(wantedFont);

@@ -6,6 +6,34 @@ The GP&A tool is a React component that can be embedded onto your website. It pr
 
 You must have a Nexar account and application at nexar.com that has the supply scope. The application's client ID and client secret should be used to fetch access tokens that will then be used by the tool.
 
+You must have [node](https://nodejs.org/en/) installed.
+
+## Hosting the GP&A Tool locally
+
+This repository is set up with an express app for fetching and caching tokens as well as a react app that displays the GP&A tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
+
+```
+gh repo clone NexarDeveloper/nexar-gpa-tool
+```
+
+### Starting up the express app
+
+You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of nexar-gpa-tool/express-app/index.js.
+
+In the `express-app` folder use the command `node index.js` to start up the app.
+
+### Starting up the react app
+
+If you aren't already set up with react, in the folder `nexar-gpa-tool/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
+
+Then to install the dependencies required for the tool you can use the command:
+
+```
+npm i --save-dev @types/styled-components @types/country-list @types/date-fns @types/react-highlight-words @types/webfontloader @apollo/client
+```
+
+Once all of the dependencies are installed then you can start the react app using the `npm start` command.
+
 ## Embedding
 
 There a couple of methods to installing the tool outlined below. The most seamless experience would be to use the NPM package. If you want the most customizable experience I would recommend the "Drag and Drop" method. With this you can then dive into the code to customize as you wish and make any adaptations.
@@ -20,31 +48,34 @@ In `nexar-gpa-tool/react-app/src` you will find the folder `nexar-gpa-tool` and 
 
 ## Parameters
 
-This is a mandatory attribute for the tool and includes your preferences for the tools search functionality as well as the access token. The only mandatory field here is the `token` as without it the tool won't be functional. Listed below are the fields:
+_searchParameters_ is a mandatory attribute for the tool and includes your preferences for the tools search functionality as well as the access token. The only mandatory field here is the `token` as without it the tool won't be functional. Listed below are the fields:
+
+| Parameter              | Type    | Description                                                                | Default | Required? |
+| ---------------------- | ------- | -------------------------------------------------------------------------- | ------- | --------- |
+| token                  | string  | Access token for Nexar API                                                 | N/A     | mandatory |
+| authorizedOnly         | boolean | Whether to only return offers from authorized dealers                      | false   | optional  |
+| country                | string  | Your user's ISO-3166-1 alpha-2 country code                                | US      | optional  |
+| currency               | string  | Your user's ISO-4217 currency code                                         | USD     | optional  |
+| enableManufacturerLink | boolean | Whether to enable direct-to-manufacturer links for parts in search results | false   | optional  |
+| expandOfferTable       | boolean | Whether to expand offer table by default                                   | false   | optional  |
+| inStockOnly            | boolean | Whether to only return parts that have stock available                     | false   | optional  |
+| limit                  | number  | How many parts to return in search results                                 | 10      | optional  |
+| q                      | string  | Default query to search for on page load                                   | N/A     | optional  |
+
+**Note:** for the parameter "enableManufacturerLink", if true and there is a direct-to-manufacturer pdp link in the part data, manufacturer name and mpn will link directly to the manufacturer pdp. If true and there is NO direct-to-manufacturer pdp link, manufacturer name and mpn will not link to anywhere. If false, manufacturer name and mpn will link directly to Octopart pdp.
 
 ```
-authorizedOnly?: boolean,
-// Whether to only return offers from authorized dealers (optional, default: false)
-country?: string,
-// Your user's ISO-3166-1 alpha-2 country code (optional, default: "US")
-currency?: string,
-// Your user's ISO-4217 currency code (optional, default: "USD")
-enableManufacturerLink?: boolean,
-// Whether to enable direct-to-manufacturer links for parts in search results (optional, default: false)
-// If true and there is a direct-to-manufacturer pdp link in the part data, manufacturer name and mpn
- will link directly to the manufacturer pdp. If true and there is NO direct-to-manufacturer pdp link,
- manufacturer name and mpn will not link to anywhere. If false, manufacturer name and mpn will link
- directly to Octopart pdp.
-expandOfferTable?: boolean,
-// Whether to expand offer table by default (optional, default: false)
-inStockOnly?: boolean,
-// Whether to only return parts that have stock available (optional, default: false)
-limit?: number,
-// How many parts to return in search results (optional, default: 10)
-q?: string,
-// Default query to search for on page load (optional)
-token: string,
-// Access token for Nexar API (mandatory)
+searchParameters = {{
+    token: string,
+    authorizedOnly?: boolean,
+    country?: string,
+    currency?: string,
+    enableManufacturerLink?: boolean,
+    expandOfferTable?: boolean,
+    inStockOnly?: boolean,
+    limit?: number,
+    q?: string,
+}}
 ```
 
 ### Token
@@ -57,49 +88,56 @@ The endpoint for fetching access tokens is https://identity.nexar.com/connect.to
 
 ## Styling
 
-Without diving into the code or for use with the NPM package there is a `styles` attribute on the `GpaTool` component for customization. Without this attribute the tool will default to a light theme and the Roboto font. The fields are listed below:
+Without diving into the code or for use with the NPM package there is a `styles` attribute on the `GpaTool` component for customization. Without this attribute the tool will default to a light theme and the _Inter_ font. The fields are listed below:
+
+| Field        | Type              | Description                                                                                                                                                                          | Default |
+| ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| font         | string            | Global font for all components in the tool. It will fetch the font using webfontloader                                                                                               | Inter   |
+| theme        | "light" or "dark" | There are two pre-made themes, light and dark                                                                                                                                        | light   |
+| customColors | incomingColors    | If you would prefer to customize the tool further than one of the themes you can use this field <br> to pass in your custom colors. The sub-fields of this field are outlined below. | N/A     |
 
 ```
-font?: string,
-// Global font for all components in the tool. It will fetch the font using webfontloader
-(optional, default: "Roboto").
-theme?: "light" | "dark",
-// There are two pre-made themes light and dark. (optional, default: "light")
-customColors?: IncomingColors,
-// If you would prefer to customize the tool further than one of the themes you can use this field to pass
-in your custom colors. The sub-fields of this field are outlined below.
+styles = {{
+    font?: string,
+    theme?: "light" | "dark",
+    customColors?: IncomingColors,
+}}
 ```
 
+| Field                | Type   | Description                                                          |                | Required? |
+| -------------------- | ------ | -------------------------------------------------------------------- | -------------- | --------- |
+| background           | string | Background color of the whole tool                                   | N/A            | mandatory |
+| tint                 | string | Color for borders and other tints                                    | N/A            | mandatory |
+| text                 | string | Color for all text                                                   | N/A            | mandatory |
+| button               | string | Color for buttons                                                    | N/A            | mandatory |
+| buttonSecondary      | string | Color for button text and border                                     | N/A            | mandatory |
+| row1                 | string | Color for one row of the offer tables                                | N/A            | mandatory |
+| row2                 | string | Color for the other row of the offer tables                          | N/A            | mandatory |
+| searchFormBackground | string | Background color of the form containing the search box and dropdowns | background     | optional  |
+| highlight            | string | Color for the mpn match highlighting                                 | partHeaderText | optional  |
+| partHeaderBackground | string | Background color for the header of each returned part                | background     | optional  |
+| partHeaderMpn        | string | Color for the mpn text in a part's header                            | partHeaderText | optional  |
+| partHeaderText       | string | Color for the text in a part's header                                | text           | optional  |
+| tableHeaderText      | string | Color for the text of an offer table's header                        | text           | optional  |
+| keyText              | string | Color for the text of prices and stock                               | text           | optional  |
+
 ```
-background: string,
-// Background color of the whole tool (mandatory)
-tint: string,
-// Color for borders and other tints (mandatory)
-text: string,
-// Color for all text (mandatory)
-button: string,
-// Color for button colors (mandatory)
-buttonSecondary: string,
-// Color for button text and border (mandatory)
-row1: string,
-// Color for one row of the offers table (mandatory)
-row2: string,
-// Color for the other row of the offers table (mandatory)
-searchFormBackground?: string,
-// Background color of the form containing the search box and dropdown options
-(optional, default: background)
-highlight?: string,
-// Color for the mpn match highlighting (optional)
-partHeaderBackground?: string,
-// Background color for the header of each returned part (optional, default: background)
-partHeaderMpn?: string,
-// Color for the mpn text in a part's header (optional, default: partHeaderText)
-partHeaderText?: string,
-// Color for the text in a part's header (optional, default: text)
-tableHeaderText?: string,
-// Color for the text for an offer table's header (optional, default: text)
-keyText?: string,
-// Color for the text of prices and stock (optional, default: text)
+customColors = {{
+    background: string,
+    tint: string,
+    text: string,
+    button: string,
+    buttonSecondary: string,
+    row1: string,
+    row2: string,
+    searchFormBackground?: string,
+    highlight?: string,
+    partHeaderBackground?: string,
+    partHeaderMpn?: string,
+    partHeaderText?: string,
+    tableHeaderText?: string,
+    keyText?: string,
+}}
 ```
 
 If you would like to customize the tool further to your liking, it uses [styled-components](https://styled-components.com/). Within the `nexar-gpa-tool/components` folder you can find all the components for the tool. At the highest level are files such as `GpaTool.tsx`, `searchForm.tsx` or `searchResults.tsx`. Then going into the `part` folder you can find the components for the offers tables.

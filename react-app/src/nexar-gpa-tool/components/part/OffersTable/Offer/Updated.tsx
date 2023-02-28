@@ -3,7 +3,7 @@ import { getTimeAgo } from "../../../../lib";
 import {
   SupPartSeller as SellerType,
   SupOffer as OfferType,
-} from "../../../../modules/graphql/generated";
+} from "../../../../lib/graphql/generated";
 import styled from "styled-components";
 import { IncomingColors } from "../../../../types";
 

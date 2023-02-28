@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   SupPartSeller as SellerType,
   SupOffer as OfferType,
-} from "../../../../modules/graphql/generated";
+} from "../../../../lib/graphql/generated";
 import { getStock } from "../../../../lib";
 import { IncomingColors } from "../../../../types";
 

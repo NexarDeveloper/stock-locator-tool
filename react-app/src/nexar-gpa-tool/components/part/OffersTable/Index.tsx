@@ -1,10 +1,10 @@
 import {
   SupPartResult as ResultType,
   SupPartSeller as SellerType,
-} from "../../../modules/graphql/generated";
+} from "../../../lib/graphql/generated";
 import styled from "styled-components";
 
-import Offer from "./Offer/Index";
+import Offer from "./Offer";
 import { IncomingColors, IncomingColumns } from "../../../types";
 
 type Props = {

@@ -15,7 +15,7 @@ import PriceTable from "./PriceTable/Index";
 import {
   SupPartResult as ResultType,
   SupPartSeller as SellerType,
-} from "../../../../modules/graphql/generated";
+} from "../../../../lib/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
 type Props = {

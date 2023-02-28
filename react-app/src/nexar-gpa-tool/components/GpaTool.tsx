@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { runQuery } from "../nexarQuery";
-import SearchForm from "./searchForm";
-import SearchResults from "./searchResults";
+import SearchForm from "./SearchForm";
+import SearchResults from "./SearchResults";
 import styled from "styled-components";
-import { SupPartResultSet } from "../modules/graphql/generated";
+import { SupPartResultSet } from "../lib/graphql/generated";
 import NoResultsFound from "./NoResultsFound";
 import WebFont from "webfontloader";
 import Footer from "./Footer";
@@ -91,7 +91,7 @@ export const GpaTool = ({ searchParameters, styles, hideColumns }: Props) => {
     let wantedFont = styles?.font || "Inter";
     WebFont.load({
       google: {
-        families: [`${wantedFont}`],
+        families: [wantedFont],
       },
     });
     setFont(wantedFont);

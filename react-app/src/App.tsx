@@ -5,7 +5,7 @@ const App = () => {
   const [token, setToken] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:5000/token")
+    fetch("http://localhost:4000/token")
       .then((res) => res.json())
       .then((data) => setToken(data.token))
       .catch((err) => console.log(err));

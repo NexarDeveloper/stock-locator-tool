@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import AngleDown from "../icons/AngleDown";
 import AngleUp from "../icons/AngleUp";
-import { SupPartResult as ResultType } from "../../modules/graphql/generated";
+import { SupPartResult as ResultType } from "../../lib/graphql/generated";
 import { IncomingColors } from "../../types";
 import { deviceWidths } from "../../lib";
 

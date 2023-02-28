@@ -1,4 +1,4 @@
-import { SupOffer as OfferType } from "../../../../modules/graphql/generated";
+import { SupOffer as OfferType } from "../../../../lib/graphql/generated";
 import styled from "styled-components";
 import { getFormattedNumber } from "../../../../lib";
 import { IncomingColors } from "../../../../types";

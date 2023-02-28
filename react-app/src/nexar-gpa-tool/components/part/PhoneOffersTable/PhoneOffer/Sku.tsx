@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { deviceWidths } from "../../../../lib";
-import { SupOffer as OfferType } from "../../../../modules/graphql/generated";
+import { SupOffer as OfferType } from "../../../../lib/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
 type Props = {

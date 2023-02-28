@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { SupPartSeller as SellerType } from "../modules/graphql/generated";
+import { SupPartSeller as SellerType } from "../lib/graphql/generated";
 
 type Expansions = {
   [id: string]: boolean;

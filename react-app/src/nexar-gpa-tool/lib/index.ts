@@ -1,6 +1,6 @@
 import { InventoryLevel } from "../types";
-import { SupPricePoint as OfferPriceType } from "../modules/graphql/generated";
-import { SupOffer as OfferType } from "../modules/graphql/generated";
+import { SupPricePoint as OfferPriceType } from "./graphql/generated";
+import { SupOffer as OfferType } from "./graphql/generated";
 import { formatDistanceToNow, parseISO } from "date-fns";
 
 export const deviceWidths = {
