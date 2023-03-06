@@ -1,6 +1,10 @@
 ﻿# stock-locator-tool
 
-The Stock Locator Tool is a React component that can be embedded onto your website. It provides search functionality to display offers and stock levels for a part, powered by the [Nexar API](https://nexar.com/).
+The Stock Locator Tool is a React component that can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Nexar API](https://nexar.com/).
+
+This repository contains three folders: express-app, npm-package, and react-app. The express-app folder is an example of how to fetch Nexar access tokens to provide the tool with. The npm-package folder contains the resources to develop and publish the tool's npm package, so if you aren't internal, you can ignore this folder. Finally, there is the react-app folder which contains the source code for the tool in an example react project.
+
+Please see the rest of the README below to see how to embed the tool into your own project.
 
 ## Prerequisites
 
