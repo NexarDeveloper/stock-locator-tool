@@ -14,7 +14,7 @@ You must have [node](https://nodejs.org/en/) installed.
 
 ## Hosting the Tool locally
 
-This repository is set up with an express app for fetching and caching tokens as well as a react app that displays the GP&A tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
+This repository is set up with an express app for fetching and caching tokens as well as a react app that displays the Stock Locator tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
 
 ```
 gh repo clone NexarDeveloper/stock-locator-tool
