@@ -1,6 +1,6 @@
-﻿# nexar-gpa-tool
+﻿# stock-locator-tool
 
-The GP&A tool is a React component that can be embedded onto your website. It provides search functionality to display offers for a part, powered by the [Nexar API](https://nexar.com/).
+The Stock Locator Tool is a React component that can be embedded onto your website. It provides search functionality to display offers and stock levels for a part, powered by the [Nexar API](https://nexar.com/).
 
 ## Prerequisites
 
@@ -8,23 +8,23 @@ You must have a Nexar account and application at nexar.com that has the supply s
 
 You must have [node](https://nodejs.org/en/) installed.
 
-## Hosting the GP&A Tool locally
+## Hosting the Tool locally
 
 This repository is set up with an express app for fetching and caching tokens as well as a react app that displays the GP&A tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
 
 ```
-gh repo clone NexarDeveloper/nexar-gpa-tool
+gh repo clone NexarDeveloper/stock-locator-tool
 ```
 
 ### Starting up the express app
 
-You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of nexar-gpa-tool/express-app/index.js.
+You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of stock-locator-tool/express-app/index.js.
 
 In the `express-app` folder use the command `node index.js` to start up the app.
 
 ### Starting up the react app
 
-If you aren't already set up with react, in the folder `nexar-gpa-tool/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
+If you aren't already set up with react, in the folder `stock-locator-tool/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
 
 Then to install the dependencies required for the tool you can use the command:
 
@@ -40,11 +40,11 @@ There a couple of methods to installing the tool outlined below. The most seamle
 
 ### NPM Package
 
-We have released the tool as an [NPM package](https://www.npmjs.com/package/@altiumnexar/gpa-tool). To install the package, use the command `npm i @altiumnexar/gpa-tool`. Then you can import `GpaTool` into your project.
+We have released the tool as an [NPM package](https://www.npmjs.com/package/@altiumnexar/stock-locator-tool). To install the package, use the command `npm i @altiumnexar/stock-locator-tool`. Then you can import `StockLocatorTool` into your project.
 
 ### Drag and Drop
 
-In `nexar-gpa-tool/react-app/src` you will find the folder `nexar-gpa-tool` and contains all of the code for the component. To embed the tool simply drag and drop this folder into your project and install any missing dependencies - these are listed at the bottom of the page.
+In `stock-locator-tool/react-app/src` you will find the folder `nexar-stock-locator-tool` which contains all of the code for the component. To embed the tool simply drag and drop this folder into your project and install any missing dependencies - these are listed at the bottom of the page.
 
 ## Parameters
 
@@ -88,7 +88,7 @@ The endpoint for fetching access tokens is https://identity.nexar.com/connect.to
 
 ## Styling
 
-Without diving into the code or for use with the NPM package there is a `styles` attribute on the `GpaTool` component for customization. Without this attribute the tool will default to a light theme and the _Inter_ font. The fields are listed below:
+Without diving into the code or for use with the NPM package there is a `styles` attribute on the `StockLocatorTool` component for customization. Without this attribute the tool will default to a light theme and the _Inter_ font. The fields are listed below:
 
 | Field        | Type              | Description                                                                                                                                                                          | Default |
 | ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
@@ -140,9 +140,9 @@ customColors = {{
 }}
 ```
 
-If you would like to customize the tool further to your liking, it uses [styled-components](https://styled-components.com/). Within the `nexar-gpa-tool/components` folder you can find all the components for the tool. At the highest level are files such as `GpaTool.tsx`, `searchForm.tsx` or `searchResults.tsx`. Then going into the `part` folder you can find the components for the offers tables.
+If you would like to customize the tool further to your liking, it uses [styled-components](https://styled-components.com/). Within the `nexar-stock-locator-tool/components` folder you can find all the components for the tool. At the highest level are files such as `StockLocatorTool.tsx`, `searchForm.tsx` or `searchResults.tsx`. Then going into the `part` folder you can find the components for the offers tables.
 
-The final attribute on the `GpaTool` component is `hideColumns`. Here you can easily hide certain columns from the offers tables. Each field is a boolean that will default to false, if you wish to hide a column, simply set the field corresponding to the column you want to hide to "true". Here's an example showing all fields:
+The final attribute on the `StockLocatorTool` component is `hideColumns`. Here you can easily hide certain columns from the offers tables. Each field is a boolean that will default to false, if you wish to hide a column, simply set the field corresponding to the column you want to hide to "true". Here's an example showing all fields:
 
 ```
 hideColumns={{

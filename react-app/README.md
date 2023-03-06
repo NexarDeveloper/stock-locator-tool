@@ -1,6 +1,6 @@
 # Example React App
 
-In this folder you can find an example react project with the GP&A tool embedded.
+In this folder you can find an example react project with the Stock Locator Tool embedded.
 This will not work in it's current form on it's own as it will try to fetch a token from `localhost:5000`.
 
 ## Prerequisites

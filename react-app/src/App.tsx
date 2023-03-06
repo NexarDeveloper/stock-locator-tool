@@ -1,4 +1,4 @@
-import { GpaTool } from "./nexar-gpa-tool/components/GpaTool";
+import { StockLocatorTool } from "./nexar-stock-locator-tool/components/StockLocatorTool";
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <GpaTool
+    <StockLocatorTool
       searchParameters={{
         token: token,
         authorizedOnly: false,

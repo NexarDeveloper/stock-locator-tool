@@ -1,1 +1,1 @@
-export { GpaTool } from "./nexar-gpa-tool/components/GpaTool";
+export { StockLocatorTool } from "./nexar-stock-locator-tool/components/StockLocatorTool";

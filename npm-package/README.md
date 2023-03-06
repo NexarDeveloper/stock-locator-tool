@@ -1,6 +1,6 @@
-# Nexar Global Price and Availability Tool NPM Package
+# Nexar Stock Locator Tool NPM Package
 
-In this folder is all of the code for our [NPM Package](https://www.npmjs.com/package/@altiumnexar/gpa-tool). Please see the [repositories README](https://github.com/NexarDeveloper/nexar-gpa-tool) for more information on the tool.
+In this folder is all of the code for our [NPM Package](https://www.npmjs.com/package/@altiumnexar/stock-locator-tool). Please see the [repositories README](https://github.com/NexarDeveloper/stock-locator-tool) for more information on the tool.
 
 ## Development
 

@@ -1,7 +1,7 @@
 {
-  "name": "@altiumnexar/gpa-tool",
-  "version": "1.0.2",
-  "description": "Provides a react component for a Global Price & Availability Tool powered by Nexar.",
+  "name": "@altiumnexar/stock-locator-tool",
+  "version": "1.0.1",
+  "description": "Provides a react component for a stock locator tool powered by the Nexar API.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
