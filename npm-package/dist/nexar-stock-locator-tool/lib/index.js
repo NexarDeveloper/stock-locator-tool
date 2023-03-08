@@ -1,62 +1,73 @@
-import { InventoryLevel } from "../types";
-import { formatDistanceToNow, parseISO } from "date-fns";
-export const deviceWidths = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getTimeAgo = exports.getPriceAtQty = exports.getPricePointAtQty = exports.getPricePoints = exports.getStock = exports.getFormattedNumber = exports.getUrlSearchParams = exports.deviceWidths = void 0;
+var types_1 = require("../types");
+var date_fns_1 = require("date-fns");
+exports.deviceWidths = {
     phone: "767px",
     tablet: "1124px",
 };
-export const getUrlSearchParams = (obj) => Object.keys(obj)
-    .reduce((urlSearchParams, key) => {
-    const value = obj[key];
-    if (value !== undefined) {
-        if (Array.isArray(value)) {
-            value.forEach((v) => {
-                urlSearchParams.append(key, v);
-            });
+var getUrlSearchParams = function (obj) {
+    return Object.keys(obj)
+        .reduce(function (urlSearchParams, key) {
+        var value = obj[key];
+        if (value !== undefined) {
+            if (Array.isArray(value)) {
+                value.forEach(function (v) {
+                    urlSearchParams.append(key, v);
+                });
+            }
+            else {
+                urlSearchParams.append(key, value.toString());
+            }
         }
-        else {
-            urlSearchParams.append(key, value.toString());
-        }
-    }
-    return urlSearchParams;
-}, new URLSearchParams())
-    .toString();
-export const getFormattedNumber = (number, country, fractionDigits) => fractionDigits !== undefined
-    ? number === null || number === void 0 ? void 0 : number.toLocaleString(country, {
-        maximumFractionDigits: fractionDigits,
-        minimumFractionDigits: fractionDigits,
-    })
-    : number === null || number === void 0 ? void 0 : number.toLocaleString(country);
-export const getStock = (inventory_level, is_broker, country) => {
+        return urlSearchParams;
+    }, new URLSearchParams())
+        .toString();
+};
+exports.getUrlSearchParams = getUrlSearchParams;
+var getFormattedNumber = function (number, country, fractionDigits) {
+    return fractionDigits !== undefined
+        ? number === null || number === void 0 ? void 0 : number.toLocaleString(country, {
+            maximumFractionDigits: fractionDigits,
+            minimumFractionDigits: fractionDigits,
+        })
+        : number === null || number === void 0 ? void 0 : number.toLocaleString(country);
+};
+exports.getFormattedNumber = getFormattedNumber;
+var getStock = function (inventory_level, is_broker, country) {
     if (is_broker) {
         return "Contact";
     }
     switch (inventory_level) {
-        case InventoryLevel.non_stocked:
+        case types_1.InventoryLevel.non_stocked:
             // -1
             return "n/s";
-        case InventoryLevel.in_stock_but_not_reported:
+        case types_1.InventoryLevel.in_stock_but_not_reported:
             // -2
             return "Yes";
-        case InventoryLevel.unknown:
+        case types_1.InventoryLevel.unknown:
             // -3
             return "Contact";
-        case InventoryLevel.rfq:
+        case types_1.InventoryLevel.rfq:
             // -4
             return "RFQ";
         default:
-            return getFormattedNumber(inventory_level, country);
+            return (0, exports.getFormattedNumber)(inventory_level, country);
     }
 };
-export const getPricePoints = (pricePoints) => {
-    const nativePricePoints = pricePoints.filter((pp) => pp.conversionRate === 1);
+exports.getStock = getStock;
+var getPricePoints = function (pricePoints) {
+    var nativePricePoints = pricePoints.filter(function (pp) { return pp.conversionRate === 1; });
     if (nativePricePoints.length > 0) {
         return nativePricePoints;
     }
     return pricePoints;
 };
-export const getPricePointAtQty = (pricePoints, qty) => {
-    let pricePoint;
-    for (let i = pricePoints.length - 1; i >= 0; i -= 1) {
+exports.getPricePoints = getPricePoints;
+var getPricePointAtQty = function (pricePoints, qty) {
+    var pricePoint;
+    for (var i = pricePoints.length - 1; i >= 0; i -= 1) {
         if (pricePoints[i].quantity <= qty) {
             pricePoint = pricePoints[i];
             break;
@@ -64,12 +75,13 @@ export const getPricePointAtQty = (pricePoints, qty) => {
     }
     return pricePoint;
 };
-export const getPriceAtQty = (offer, qty, country, decimalPlaces) => {
-    const pricePoints = getPricePoints(offer.prices);
-    const pricePoint = getPricePointAtQty(pricePoints, qty);
-    let price = null;
+exports.getPricePointAtQty = getPricePointAtQty;
+var getPriceAtQty = function (offer, qty, country, decimalPlaces) {
+    var pricePoints = (0, exports.getPricePoints)(offer.prices);
+    var pricePoint = (0, exports.getPricePointAtQty)(pricePoints, qty);
+    var price = null;
     if (pricePoint) {
-        let fractionDigits = 3;
+        var fractionDigits = 3;
         if (pricePoint.convertedPrice > 100) {
             fractionDigits = 2;
         }
@@ -77,16 +89,17 @@ export const getPriceAtQty = (offer, qty, country, decimalPlaces) => {
             fractionDigits = 0;
         }
         fractionDigits = decimalPlaces ? decimalPlaces : fractionDigits;
-        price = getFormattedNumber(pricePoint.convertedPrice, country, fractionDigits);
+        price = (0, exports.getFormattedNumber)(pricePoint.convertedPrice, country, fractionDigits);
     }
     return price;
 };
-export const getTimeAgo = (dateString) => {
-    let short = formatDistanceToNow(parseISO(dateString), {
+exports.getPriceAtQty = getPriceAtQty;
+var getTimeAgo = function (dateString) {
+    var short = (0, date_fns_1.formatDistanceToNow)((0, date_fns_1.parseISO)(dateString), {
         includeSeconds: true,
     });
     short = short.replace(/^about\ /, "");
-    let long = `${short} ago`;
+    var long = "".concat(short, " ago");
     if (short.indexOf("seconds") !== -1 ||
         short.indexOf("half a minute") !== -1 ||
         short.indexOf("less than a minute") !== -1) {
@@ -105,7 +118,7 @@ export const getTimeAgo = (dateString) => {
             .replace(/^an?/, "1");
     }
     if (short.indexOf("d") !== -1) {
-        const numericPartOfDtnShort = parseInt(short.replace(/d$/, ""), 10);
+        var numericPartOfDtnShort = parseInt(short.replace(/d$/, ""), 10);
         if (numericPartOfDtnShort > 7) {
             short = ">1wk";
             long = "over a week ago";
@@ -119,7 +132,8 @@ export const getTimeAgo = (dateString) => {
         long = long.replace("1", "a");
     }
     return {
-        long,
-        short,
+        long: long,
+        short: short,
     };
 };
+exports.getTimeAgo = getTimeAgo;

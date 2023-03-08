@@ -1,4 +1,5 @@
-import { SupOffer as OfferType } from "../../../../lib/graphql/generated";
+import React from "react";
+import { SupOffer as OfferType } from "../../../../modules/graphql/generated";
 import { getPriceAtQty } from "../../../../lib";
 import styled from "styled-components";
 import { IncomingColors } from "../../../../types";

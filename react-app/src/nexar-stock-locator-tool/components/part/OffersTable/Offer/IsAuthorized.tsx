@@ -1,7 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 import Star from "../../../icons/Star";
 import EmptyStar from "../../../icons/EmptyStar";
-import { SupPartSeller as SellerType } from "../../../../lib/graphql/generated";
+import { SupPartSeller as SellerType } from "../../../../modules/graphql/generated";
 
 type Props = {
   seller: SellerType;

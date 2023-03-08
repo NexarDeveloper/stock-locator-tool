@@ -1,13 +1,15 @@
-import { useState } from "react";
-const useHover = () => {
-    const [isHovered, setIsHovered] = useState(false);
-    const handleMouseOut = () => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+var useHover = function () {
+    var _a = (0, react_1.useState)(false), isHovered = _a[0], setIsHovered = _a[1];
+    var handleMouseOut = function () {
         setIsHovered(false);
     };
-    const handleMouseOver = () => setIsHovered(true);
+    var handleMouseOver = function () { return setIsHovered(true); };
     if (typeof window !== "undefined" && window.innerWidth < 767) {
         return [false, handleMouseOut, handleMouseOver];
     }
     return [isHovered, handleMouseOut, handleMouseOver];
 };
-export default useHover;
+exports.default = useHover;

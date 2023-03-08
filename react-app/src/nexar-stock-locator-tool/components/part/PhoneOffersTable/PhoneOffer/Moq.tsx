@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { getFormattedNumber } from "../../../../lib";
-import { SupOffer as OfferType } from "../../../../lib/graphql/generated";
+import { SupOffer as OfferType } from "../../../../modules/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
 type Props = {

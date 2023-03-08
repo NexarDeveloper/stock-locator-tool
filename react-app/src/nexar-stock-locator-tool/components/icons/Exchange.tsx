@@ -1,3 +1,5 @@
+import React from "react";
+
 const Exchange = () => (
   <svg className="exchange" viewBox="0 0 447.4 467.2">
     <path
@@ -15,6 +17,6 @@ const Exchange = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default Exchange
+export default Exchange;

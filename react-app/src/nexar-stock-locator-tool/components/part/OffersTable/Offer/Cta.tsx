@@ -1,8 +1,9 @@
+import React from "react";
 import {
   SupPartResult as ResultType,
   SupPartSeller as SellerType,
   SupOffer as OfferType,
-} from "../../../../lib/graphql/generated";
+} from "../../../../modules/graphql/generated";
 import { IncomingColors, InventoryLevel } from "../../../../types";
 import styled from "styled-components";
 import { getUrlSearchParams } from "../../../../lib";

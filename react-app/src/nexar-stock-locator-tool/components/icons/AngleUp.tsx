@@ -1,3 +1,5 @@
+import React from "react";
+
 const AngleUp = () => (
   <svg viewBox="0 0 256 512">
     <path
@@ -5,6 +7,6 @@ const AngleUp = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default AngleUp
+export default AngleUp;

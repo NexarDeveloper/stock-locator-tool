@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { IncomingColors } from "../types";
 import { deviceWidths } from "../lib";

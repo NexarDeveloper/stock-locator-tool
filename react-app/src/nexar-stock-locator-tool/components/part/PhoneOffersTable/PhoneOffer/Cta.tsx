@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 import { getUrlSearchParams } from "../../../../lib";
 import {
   SupPartResult as ResultType,
   SupPartSeller as SellerType,
   SupOffer as OfferType,
-} from "../../../../lib/graphql/generated";
+} from "../../../../modules/graphql/generated";
 import { IncomingColors, InventoryLevel } from "../../../../types";
 
 type Props = {

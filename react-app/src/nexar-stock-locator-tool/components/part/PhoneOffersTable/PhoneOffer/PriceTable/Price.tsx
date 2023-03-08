@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 import { getPriceAtQty } from "../../../../../lib";
-import { SupOffer as OfferType } from "../../../../../lib/graphql/generated";
+import { SupOffer as OfferType } from "../../../../../modules/graphql/generated";
 
 type Props = {
   country: string;

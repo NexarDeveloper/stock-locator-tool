@@ -1,9 +1,10 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { getTimeAgo } from "../../../../lib";
 import {
   SupPartSeller as SellerType,
   SupOffer as OfferType,
-} from "../../../../lib/graphql/generated";
+} from "../../../../modules/graphql/generated";
 import styled from "styled-components";
 import { IncomingColors } from "../../../../types";
 

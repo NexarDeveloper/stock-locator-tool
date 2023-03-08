@@ -1,74 +1,35 @@
-import React from "react";
-import Info from "./icons/info";
-import useHover from "../hooks/useHover";
-import styled from "styled-components";
-const Sponsored = ({ theme }) => {
-    const [isHovered, handleMouseOut, handleMouseOver] = useHover();
-    return (React.createElement(SponsoredContainer, { style: { color: theme.text } },
-        React.createElement("p", { "data-event": "click focus", onMouseOut: handleMouseOut, onMouseOver: handleMouseOver },
-            React.createElement("span", null, "Sponsored"),
-            React.createElement(Info, null)),
-        isHovered && (React.createElement(Tooltip, { "data-event": "click focus", onMouseOut: handleMouseOut, onMouseOver: handleMouseOver },
-            React.createElement(TooltipContent, null,
-                React.createElement(TooltipText, null,
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(require("react"));
+var info_1 = __importDefault(require("./icons/info"));
+var useHover_1 = __importDefault(require("../hooks/useHover"));
+var styled_components_1 = __importDefault(require("styled-components"));
+var Sponsored = function (_a) {
+    var theme = _a.theme;
+    var _b = (0, useHover_1.default)(), isHovered = _b[0], handleMouseOut = _b[1], handleMouseOver = _b[2];
+    return (react_1.default.createElement(SponsoredContainer, { style: { color: theme.text } },
+        react_1.default.createElement("p", { "data-event": "click focus", onMouseOut: handleMouseOut, onMouseOver: handleMouseOver },
+            react_1.default.createElement("span", null, "Sponsored"),
+            react_1.default.createElement(info_1.default, null)),
+        isHovered && (react_1.default.createElement(Tooltip, { "data-event": "click focus", onMouseOut: handleMouseOut, onMouseOver: handleMouseOver },
+            react_1.default.createElement(TooltipContent, null,
+                react_1.default.createElement(TooltipText, null,
                     "Octopart is compensated by the distributors listed here, and payment is one of several factors used to rank the order that distributors are listed in. As a free service, Octopart relies on sponsorship from advertisers including distributors and manufacturers. Visit our",
                     " ",
-                    React.createElement("a", { href: "https://octopart.com/faq#how-does-octopart-make-money", target: "_blank", rel: "noreferrer", style: { color: theme.button } }, "FAQ"),
+                    react_1.default.createElement("a", { href: "https://octopart.com/faq#how-does-octopart-make-money", target: "_blank", rel: "noreferrer", style: { color: theme.button } }, "FAQ"),
                     " ",
                     "to learn more."))))));
 };
-const SponsoredContainer = styled.div `
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  position: relative;
-
-  span {
-    font-size: 13px;
-    line-height: 16px;
-  }
-
-  svg {
-    height: 11px;
-    margin-left: 4px;
-    width: 11px;
-  }
-`;
-const Tooltip = styled.div `
-  width: 225px;
-  z-index: 2;
-  border-radius: 4px;
-  display: block;
-  position: absolute;
-  right: 0px;
-  top: 40px;
-  background-color: white;
-  border: 1px solid black;
-
-  &:before {
-    right: 35px;
-    background-color: inherit;
-    border: inherit;
-    box-shadow: inherit;
-    content: "";
-    display: block;
-    height: 12px;
-    position: absolute;
-    transform: rotate(-45deg);
-    width: 12px;
-    z-index: 1;
-  }
-`;
-const TooltipContent = styled.div `
-  background: inherit;
-  border-radius: inherit;
-  padding: 5px 4px 5px 4px;
-  position: relative;
-  z-index: 2;
-`;
-const TooltipText = styled.div `
-  font-size: 12px;
-  line-height: 15px;
-  color: black;
-`;
-export default Sponsored;
+var SponsoredContainer = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  margin-left: 20px;\n  position: relative;\n\n  span {\n    font-size: 13px;\n    line-height: 16px;\n  }\n\n  svg {\n    height: 11px;\n    margin-left: 4px;\n    width: 11px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  margin-left: 20px;\n  position: relative;\n\n  span {\n    font-size: 13px;\n    line-height: 16px;\n  }\n\n  svg {\n    height: 11px;\n    margin-left: 4px;\n    width: 11px;\n  }\n"])));
+var Tooltip = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: 225px;\n  z-index: 2;\n  border-radius: 4px;\n  display: block;\n  position: absolute;\n  right: 0px;\n  top: 40px;\n  background-color: white;\n  border: 1px solid black;\n\n  &:before {\n    right: 35px;\n    background-color: inherit;\n    border: inherit;\n    box-shadow: inherit;\n    content: \"\";\n    display: block;\n    height: 12px;\n    position: absolute;\n    transform: rotate(-45deg);\n    width: 12px;\n    z-index: 1;\n  }\n"], ["\n  width: 225px;\n  z-index: 2;\n  border-radius: 4px;\n  display: block;\n  position: absolute;\n  right: 0px;\n  top: 40px;\n  background-color: white;\n  border: 1px solid black;\n\n  &:before {\n    right: 35px;\n    background-color: inherit;\n    border: inherit;\n    box-shadow: inherit;\n    content: \"\";\n    display: block;\n    height: 12px;\n    position: absolute;\n    transform: rotate(-45deg);\n    width: 12px;\n    z-index: 1;\n  }\n"])));
+var TooltipContent = styled_components_1.default.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  background: inherit;\n  border-radius: inherit;\n  padding: 5px 4px 5px 4px;\n  position: relative;\n  z-index: 2;\n"], ["\n  background: inherit;\n  border-radius: inherit;\n  padding: 5px 4px 5px 4px;\n  position: relative;\n  z-index: 2;\n"])));
+var TooltipText = styled_components_1.default.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  font-size: 12px;\n  line-height: 15px;\n  color: black;\n"], ["\n  font-size: 12px;\n  line-height: 15px;\n  color: black;\n"])));
+exports.default = Sponsored;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4;

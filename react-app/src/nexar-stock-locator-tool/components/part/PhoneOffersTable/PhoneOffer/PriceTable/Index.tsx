@@ -1,7 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 import Exchange from "../../../../icons/Exchange";
 import { getPricePoints } from "../../../../../lib";
-import { SupOffer as OfferType } from "../../../../../lib/graphql/generated";
+import { SupOffer as OfferType } from "../../../../../modules/graphql/generated";
 import Price from "./Price";
 import { IncomingColors } from "../../../../../types";
 

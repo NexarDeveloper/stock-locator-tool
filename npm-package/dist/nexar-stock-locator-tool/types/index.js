@@ -1,4 +1,7 @@
-export var InventoryLevel;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.InventoryLevel = void 0;
+var InventoryLevel;
 (function (InventoryLevel) {
     // -1: Non-stocked (seller is not currently stocking the product)
     InventoryLevel[InventoryLevel["non_stocked"] = -1] = "non_stocked";
@@ -10,4 +13,4 @@ export var InventoryLevel;
     InventoryLevel[InventoryLevel["unknown"] = -3] = "unknown";
     // -4: RFQ
     InventoryLevel[InventoryLevel["rfq"] = -4] = "rfq";
-})(InventoryLevel || (InventoryLevel = {}));
+})(InventoryLevel = exports.InventoryLevel || (exports.InventoryLevel = {}));

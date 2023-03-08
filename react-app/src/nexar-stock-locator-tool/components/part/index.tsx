@@ -1,10 +1,11 @@
+import React from "react";
 import useExpansions, {
   Context as ExpansionsContext,
 } from "../../hooks/useExpansions";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { SupPartResult as Result } from "../../lib/graphql/generated";
+import { SupPartResult as Result } from "../../modules/graphql/generated";
 import Header from "./Header";
-import OffersTable from "./OffersTable";
+import OffersTable from "./OffersTable/Index";
 import PhoneOffersTable from "./PhoneOffersTable";
 import ShowButton from "./ShowButton";
 import styled from "styled-components";
