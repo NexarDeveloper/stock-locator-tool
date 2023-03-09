@@ -1,9 +1,10 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { getTimeAgo } from "../../../../lib";
 import {
   SupPartSeller as SellerType,
   SupOffer as OfferType,
-} from "../../../../lib/graphql/generated";
+} from "../../../../modules/graphql/generated";
 import styled from "styled-components";
 import { IncomingColors } from "../../../../types";
 
@@ -49,7 +50,8 @@ const Updated = ({ offer, seller, theme }: Props) => {
 };
 
 const StyledUpdated = styled.td`
-  padding: 6px 6px 6px 40px;
+  padding: 6px;
+  text-align: right;
   font-size: 13px;
   display: table-cell;
   vertical-align: middle;

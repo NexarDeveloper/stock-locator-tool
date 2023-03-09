@@ -1,3 +1,5 @@
+import React from "react";
+
 const TriangleDown = () => (
   <svg viewBox="0 0 320 512">
     <path

@@ -1,3 +1,5 @@
+import React from "react";
+
 const Star = () => (
   <svg className="star" viewBox="0 0 576 512">
     <path

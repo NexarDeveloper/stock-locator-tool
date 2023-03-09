@@ -1,21 +1,23 @@
-import { useEffect, useRef, useState } from "react";
-const useClickOutsideOrEscape = () => {
-    const ref = useRef(null);
-    const [isOpen, setIsOpen] = useState(false);
-    const handleClick = () => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+var useClickOutsideOrEscape = function () {
+    var ref = (0, react_1.useRef)(null);
+    var _a = (0, react_1.useState)(false), isOpen = _a[0], setIsOpen = _a[1];
+    var handleClick = function () {
         setIsOpen(!isOpen);
     };
-    const handleKeyDown = (event) => {
+    var handleKeyDown = function (event) {
         if (event.which === 13) {
             setIsOpen(!isOpen);
         }
     };
-    const handleKeyDownOutside = (event) => {
+    var handleKeyDownOutside = function (event) {
         if (event.which === 27) {
             setIsOpen(false);
         }
     };
-    const handleClickOutside = (event) => {
+    var handleClickOutside = function (event) {
         if (ref === null || ref.current === null) {
             return;
         }
@@ -23,7 +25,7 @@ const useClickOutsideOrEscape = () => {
             setIsOpen(false);
         }
     };
-    useEffect(() => {
+    (0, react_1.useEffect)(function () {
         if (isOpen) {
             if ("ontouchstart" in document.documentElement) {
                 document.body.style.cursor = "pointer";
@@ -31,7 +33,7 @@ const useClickOutsideOrEscape = () => {
             document.addEventListener("click", handleClickOutside);
             document.addEventListener("keydown", handleKeyDownOutside);
         }
-        return () => {
+        return function () {
             if ("ontouchstart" in document.documentElement) {
                 document.body.style.cursor = "auto";
             }
@@ -39,6 +41,6 @@ const useClickOutsideOrEscape = () => {
             document.removeEventListener("keydown", handleKeyDownOutside);
         };
     }, [ref.current, isOpen]);
-    return { handleClick, handleKeyDown, isOpen, ref };
+    return { handleClick: handleClick, handleKeyDown: handleKeyDown, isOpen: isOpen, ref: ref };
 };
-export default useClickOutsideOrEscape;
+exports.default = useClickOutsideOrEscape;

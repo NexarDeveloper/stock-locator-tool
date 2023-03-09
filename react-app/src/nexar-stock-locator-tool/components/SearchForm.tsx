@@ -1,9 +1,9 @@
 import { getData as getCountries } from "country-list";
-import SelectDropdown from "./SelectDropdown";
+import SelectDropdown from "./selectDropdown";
 import styled from "styled-components";
 import { deviceWidths } from "../lib";
 import MagnifyingGlass from "./icons/magnifyingGlass";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IncomingColors } from "../types";
 
 type Country = {

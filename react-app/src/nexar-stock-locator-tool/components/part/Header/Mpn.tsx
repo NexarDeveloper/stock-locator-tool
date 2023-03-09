@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 import Highlighter from "react-highlight-words";
-import { SupPartResult as ResultType } from "../../../lib/graphql/generated";
+import { SupPartResult as ResultType } from "../../../modules/graphql/generated";
 import { IncomingColors } from "../../../types";
 
 type Props = {

@@ -1,4 +1,5 @@
-import { SupPartResult as Result } from "../../../lib/graphql/generated";
+import React from "react";
+import { SupPartResult as Result } from "../../../modules/graphql/generated";
 import styled from "styled-components";
 import Highlighter from "react-highlight-words";
 import { deviceWidths } from "../../../lib";

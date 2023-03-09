@@ -1,15 +1,16 @@
+import React from "react";
 import { useState } from "react";
 import {
   SupPartResult as Result,
   SupPartSeller as SellerType,
-} from "../../../../lib/graphql/generated";
-import IsAuthorized from "./IsAuthorized";
+} from "../../../../modules/graphql/generated";
+import IsAuthorized from "./isAuthorized";
 import Seller from "./Seller";
 import Sku from "./Sku";
 import Stock from "./Stock";
 import Moq from "./Moq";
 import Cta from "./Cta";
-import Currency from "./Currency";
+import Currency from "./currency";
 import Price from "./Price";
 import Updated from "./Updated";
 import { IncomingColors, IncomingColumns } from "../../../../types";

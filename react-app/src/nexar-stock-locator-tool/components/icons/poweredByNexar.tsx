@@ -1,3 +1,5 @@
+import React from "react";
+
 const PoweredByNexar = () => (
   <svg width={210} height={16} fill="none">
     <path

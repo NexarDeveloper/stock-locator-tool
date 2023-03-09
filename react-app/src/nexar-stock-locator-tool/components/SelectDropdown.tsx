@@ -1,3 +1,4 @@
+import React from "react";
 import useClickOutsideOrEscape from "../hooks/useClickOutsideOrEscape";
 import styled from "styled-components";
 import { deviceWidths } from "../lib";

@@ -1,45 +1,61 @@
-import { createContext, useState } from "react";
-const value = {
-    expansions: {},
-    handleExpanderClick: (_id) => { },
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
-export const Context = createContext(value);
-const useExpansions = (sellers, showAllInitially = false) => {
-    const initialExpansions = {};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Context = void 0;
+var react_1 = require("react");
+var value = {
+    expansions: {},
+    handleExpanderClick: function (_id) { },
+};
+exports.Context = (0, react_1.createContext)(value);
+var useExpansions = function (sellers, showAllInitially) {
+    if (showAllInitially === void 0) { showAllInitially = false; }
+    var initialExpansions = {};
     if (sellers.length > 0) {
-        sellers.forEach((s) => {
+        sellers.forEach(function (s) {
             if (s.offers.length > 1) {
                 initialExpansions[s.company.id] = false;
             }
         });
     }
-    const [expansions, setExpansions] = useState(initialExpansions);
-    const [isShowingAll, setIsShowingAll] = useState(showAllInitially);
-    const handleExpanderClick = (id) => {
-        setExpansions(Object.assign(Object.assign({}, expansions), { [id]: !expansions[id] }));
+    var _a = (0, react_1.useState)(initialExpansions), expansions = _a[0], setExpansions = _a[1];
+    var _b = (0, react_1.useState)(showAllInitially), isShowingAll = _b[0], setIsShowingAll = _b[1];
+    var handleExpanderClick = function (id) {
+        var _a;
+        setExpansions(__assign(__assign({}, expansions), (_a = {}, _a[id] = !expansions[id], _a)));
     };
-    const handleShowAllClick = () => {
+    var handleShowAllClick = function () {
         setIsShowingAll(true);
-        const newExpansions = Object.assign({}, expansions);
-        Object.keys(newExpansions).forEach((id) => {
+        var newExpansions = __assign({}, expansions);
+        Object.keys(newExpansions).forEach(function (id) {
             newExpansions[id] = true;
         });
         setExpansions(newExpansions);
     };
-    const handleShowFewerClick = () => {
+    var handleShowFewerClick = function () {
         setIsShowingAll(false);
-        const newExpansions = Object.assign({}, expansions);
-        Object.keys(newExpansions).forEach((id) => {
+        var newExpansions = __assign({}, expansions);
+        Object.keys(newExpansions).forEach(function (id) {
             newExpansions[id] = false;
         });
         setExpansions(newExpansions);
     };
     return {
-        expansions,
-        handleExpanderClick,
-        handleShowAllClick,
-        handleShowFewerClick,
-        isShowingAll,
+        expansions: expansions,
+        handleExpanderClick: handleExpanderClick,
+        handleShowAllClick: handleShowAllClick,
+        handleShowFewerClick: handleShowFewerClick,
+        isShowingAll: isShowingAll,
     };
 };
-export default useExpansions;
+exports.default = useExpansions;

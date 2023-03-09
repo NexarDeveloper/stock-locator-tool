@@ -1,3 +1,4 @@
+import React from "react";
 import Info from "./icons/info";
 import useHover from "../hooks/useHover";
 import styled from "styled-components";

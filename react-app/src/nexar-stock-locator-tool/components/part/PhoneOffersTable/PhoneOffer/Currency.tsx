@@ -1,8 +1,9 @@
+import React from "react";
 import styled from "styled-components";
 import Exchange from "../../../icons/Exchange";
 import useHover from "../../../../hooks/useHover";
 import { getFormattedNumber, getPricePoints } from "../../../../lib";
-import { SupOffer as OfferType } from "../../../../lib/graphql/generated";
+import { SupOffer as OfferType } from "../../../../modules/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
 type Props = {

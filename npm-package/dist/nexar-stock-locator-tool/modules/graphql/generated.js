@@ -1,31 +1,72 @@
-import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
-const defaultOptions = {};
-export var ApplyPolicy;
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useMpnSearchLazyQuery = exports.useMpnSearchQuery = exports.MpnSearchDocument = exports.SupSortDirection = exports.SupRole = exports.SupPlanTier = exports.SupPartLifeCycle = exports.SupNexarFeatureId = exports.ManViolationType = exports.ManSourcing = exports.ManSolderMaskColour = exports.ManSilkScreenColour = exports.ManSide = exports.ManShippingCarrier = exports.ManQuoteCategory = exports.ManPaymentMethod = exports.ManPathType = exports.ManPartStatus = exports.ManPartIssue = exports.ManOrderStatus = exports.ManOrderEventType = exports.ManMountingType = exports.ManLayerType = exports.ManCurrency = exports.ManAccess = exports.DesUserPictureSize = exports.DesTaskStatus = exports.DesTaskPriority = exports.DesPrimitiveShape = exports.DesPinElectricalType = exports.DesParameterType = exports.DesPadType = exports.DesLayerType = exports.DesJobStatus = exports.DesContentTypeKind = exports.DatScrJobState = exports.DatBomPartSearchStrategy = exports.DatBomAnalysisResultLevel = exports.DatBomAnalysisLevel = exports.ApplyPolicy = void 0;
+var client_1 = require("@apollo/client");
+var Apollo = __importStar(require("@apollo/client"));
+var defaultOptions = {};
+var ApplyPolicy;
 (function (ApplyPolicy) {
     ApplyPolicy["AfterResolver"] = "AFTER_RESOLVER";
     ApplyPolicy["BeforeResolver"] = "BEFORE_RESOLVER";
-})(ApplyPolicy || (ApplyPolicy = {}));
-export var DatBomAnalysisLevel;
+})(ApplyPolicy = exports.ApplyPolicy || (exports.ApplyPolicy = {}));
+var DatBomAnalysisLevel;
 (function (DatBomAnalysisLevel) {
     DatBomAnalysisLevel["Error"] = "ERROR";
     DatBomAnalysisLevel["Suggestion"] = "SUGGESTION";
     DatBomAnalysisLevel["Warning"] = "WARNING";
-})(DatBomAnalysisLevel || (DatBomAnalysisLevel = {}));
-export var DatBomAnalysisResultLevel;
+})(DatBomAnalysisLevel = exports.DatBomAnalysisLevel || (exports.DatBomAnalysisLevel = {}));
+var DatBomAnalysisResultLevel;
 (function (DatBomAnalysisResultLevel) {
     DatBomAnalysisResultLevel["Error"] = "ERROR";
     DatBomAnalysisResultLevel["Suggestion"] = "SUGGESTION";
     DatBomAnalysisResultLevel["Warning"] = "WARNING";
-})(DatBomAnalysisResultLevel || (DatBomAnalysisResultLevel = {}));
-export var DatBomPartSearchStrategy;
+})(DatBomAnalysisResultLevel = exports.DatBomAnalysisResultLevel || (exports.DatBomAnalysisResultLevel = {}));
+var DatBomPartSearchStrategy;
 (function (DatBomPartSearchStrategy) {
     DatBomPartSearchStrategy["Exact"] = "EXACT";
     DatBomPartSearchStrategy["Fuzzy"] = "FUZZY";
     DatBomPartSearchStrategy["Partial"] = "PARTIAL";
-})(DatBomPartSearchStrategy || (DatBomPartSearchStrategy = {}));
+})(DatBomPartSearchStrategy = exports.DatBomPartSearchStrategy || (exports.DatBomPartSearchStrategy = {}));
 /** Possible states of an SCR processing run. */
-export var DatScrJobState;
+var DatScrJobState;
 (function (DatScrJobState) {
     /** Job has completed successfully. */
     DatScrJobState["Completed"] = "COMPLETED";
@@ -35,8 +76,8 @@ export var DatScrJobState;
     DatScrJobState["Running"] = "RUNNING";
     /** Job is in an unknown state. */
     DatScrJobState["Unknown"] = "UNKNOWN";
-})(DatScrJobState || (DatScrJobState = {}));
-export var DesContentTypeKind;
+})(DatScrJobState = exports.DatScrJobState || (exports.DatScrJobState = {}));
+var DesContentTypeKind;
 (function (DesContentTypeKind) {
     DesContentTypeKind["BinaryFile"] = "BINARY_FILE";
     DesContentTypeKind["BmsAutoGeneratedComponents"] = "BMS_AUTO_GENERATED_COMPONENTS";
@@ -85,15 +126,15 @@ export var DesContentTypeKind;
     DesContentTypeKind["SiModel"] = "SI_MODEL";
     DesContentTypeKind["Symbol"] = "SYMBOL";
     DesContentTypeKind["WebItem"] = "WEB_ITEM";
-})(DesContentTypeKind || (DesContentTypeKind = {}));
-export var DesJobStatus;
+})(DesContentTypeKind = exports.DesContentTypeKind || (exports.DesContentTypeKind = {}));
+var DesJobStatus;
 (function (DesJobStatus) {
     DesJobStatus["Done"] = "DONE";
     DesJobStatus["Error"] = "ERROR";
     DesJobStatus["Pending"] = "PENDING";
     DesJobStatus["Processing"] = "PROCESSING";
-})(DesJobStatus || (DesJobStatus = {}));
-export var DesLayerType;
+})(DesJobStatus = exports.DesJobStatus || (exports.DesJobStatus = {}));
+var DesLayerType;
 (function (DesLayerType) {
     DesLayerType["Abstract"] = "ABSTRACT";
     DesLayerType["Adhesive"] = "ADHESIVE";
@@ -117,13 +158,13 @@ export var DesLayerType;
     DesLayerType["Stiffener"] = "STIFFENER";
     DesLayerType["SurfaceFinish"] = "SURFACE_FINISH";
     DesLayerType["Unknown"] = "UNKNOWN";
-})(DesLayerType || (DesLayerType = {}));
-export var DesPadType;
+})(DesLayerType = exports.DesLayerType || (exports.DesLayerType = {}));
+var DesPadType;
 (function (DesPadType) {
     DesPadType["Free"] = "FREE";
     DesPadType["Smd"] = "SMD";
-})(DesPadType || (DesPadType = {}));
-export var DesParameterType;
+})(DesPadType = exports.DesPadType || (exports.DesPadType = {}));
+var DesParameterType;
 (function (DesParameterType) {
     DesParameterType["Capacitance"] = "CAPACITANCE";
     DesParameterType["Charge"] = "CHARGE";
@@ -143,8 +184,8 @@ export var DesParameterType;
     DesParameterType["Text"] = "TEXT";
     DesParameterType["Time"] = "TIME";
     DesParameterType["Voltage"] = "VOLTAGE";
-})(DesParameterType || (DesParameterType = {}));
-export var DesPinElectricalType;
+})(DesParameterType = exports.DesParameterType || (exports.DesParameterType = {}));
+var DesPinElectricalType;
 (function (DesPinElectricalType) {
     DesPinElectricalType["HiZ"] = "HI_Z";
     DesPinElectricalType["Input"] = "INPUT";
@@ -154,46 +195,46 @@ export var DesPinElectricalType;
     DesPinElectricalType["Output"] = "OUTPUT";
     DesPinElectricalType["Passive"] = "PASSIVE";
     DesPinElectricalType["Power"] = "POWER";
-})(DesPinElectricalType || (DesPinElectricalType = {}));
-export var DesPrimitiveShape;
+})(DesPinElectricalType = exports.DesPinElectricalType || (exports.DesPinElectricalType = {}));
+var DesPrimitiveShape;
 (function (DesPrimitiveShape) {
     DesPrimitiveShape["Rectangle"] = "RECTANGLE";
     DesPrimitiveShape["Round"] = "ROUND";
     DesPrimitiveShape["RoundedRectangle"] = "ROUNDED_RECTANGLE";
-})(DesPrimitiveShape || (DesPrimitiveShape = {}));
-export var DesTaskPriority;
+})(DesPrimitiveShape = exports.DesPrimitiveShape || (exports.DesPrimitiveShape = {}));
+var DesTaskPriority;
 (function (DesTaskPriority) {
     DesTaskPriority["High"] = "HIGH";
     DesTaskPriority["Highest"] = "HIGHEST";
     DesTaskPriority["Low"] = "LOW";
     DesTaskPriority["Medium"] = "MEDIUM";
     DesTaskPriority["Undefined"] = "UNDEFINED";
-})(DesTaskPriority || (DesTaskPriority = {}));
-export var DesTaskStatus;
+})(DesTaskPriority = exports.DesTaskPriority || (exports.DesTaskPriority = {}));
+var DesTaskStatus;
 (function (DesTaskStatus) {
     DesTaskStatus["InProgress"] = "IN_PROGRESS";
     DesTaskStatus["Resolved"] = "RESOLVED";
     DesTaskStatus["ToDo"] = "TO_DO";
     DesTaskStatus["Undefined"] = "UNDEFINED";
-})(DesTaskStatus || (DesTaskStatus = {}));
-export var DesUserPictureSize;
+})(DesTaskStatus = exports.DesTaskStatus || (exports.DesTaskStatus = {}));
+var DesUserPictureSize;
 (function (DesUserPictureSize) {
     DesUserPictureSize["Original"] = "ORIGINAL";
     DesUserPictureSize["Size48X48"] = "SIZE48X48";
     DesUserPictureSize["Size70X70"] = "SIZE70X70";
     DesUserPictureSize["Size128X128"] = "SIZE128X128";
-})(DesUserPictureSize || (DesUserPictureSize = {}));
-export var ManAccess;
+})(DesUserPictureSize = exports.DesUserPictureSize || (exports.DesUserPictureSize = {}));
+var ManAccess;
 (function (ManAccess) {
     ManAccess["AllowMpn"] = "ALLOW_MPN";
     ManAccess["IsCreator"] = "IS_CREATOR";
     ManAccess["IsEms"] = "IS_EMS";
-})(ManAccess || (ManAccess = {}));
-export var ManCurrency;
+})(ManAccess = exports.ManAccess || (exports.ManAccess = {}));
+var ManCurrency;
 (function (ManCurrency) {
     ManCurrency["Usd"] = "USD";
-})(ManCurrency || (ManCurrency = {}));
-export var ManLayerType;
+})(ManCurrency = exports.ManCurrency || (exports.ManCurrency = {}));
+var ManLayerType;
 (function (ManLayerType) {
     ManLayerType["Core"] = "CORE";
     ManLayerType["Coverlay"] = "COVERLAY";
@@ -203,13 +244,13 @@ export var ManLayerType;
     ManLayerType["Signal"] = "SIGNAL";
     ManLayerType["SolderMask"] = "SOLDER_MASK";
     ManLayerType["SurfaceFinish"] = "SURFACE_FINISH";
-})(ManLayerType || (ManLayerType = {}));
-export var ManMountingType;
+})(ManLayerType = exports.ManLayerType || (exports.ManLayerType = {}));
+var ManMountingType;
 (function (ManMountingType) {
     ManMountingType["SurfaceMount"] = "SURFACE_MOUNT";
     ManMountingType["ThroughHole"] = "THROUGH_HOLE";
-})(ManMountingType || (ManMountingType = {}));
-export var ManOrderEventType;
+})(ManMountingType = exports.ManMountingType || (exports.ManMountingType = {}));
+var ManOrderEventType;
 (function (ManOrderEventType) {
     ManOrderEventType["Accepted"] = "ACCEPTED";
     ManOrderEventType["Batched"] = "BATCHED";
@@ -227,8 +268,8 @@ export var ManOrderEventType;
     ManOrderEventType["Reviewed"] = "REVIEWED";
     ManOrderEventType["Shipped"] = "SHIPPED";
     ManOrderEventType["TimeEstimation"] = "TIME_ESTIMATION";
-})(ManOrderEventType || (ManOrderEventType = {}));
-export var ManOrderStatus;
+})(ManOrderEventType = exports.ManOrderEventType || (exports.ManOrderEventType = {}));
+var ManOrderStatus;
 (function (ManOrderStatus) {
     ManOrderStatus["Cancelled"] = "CANCELLED";
     ManOrderStatus["Complete"] = "COMPLETE";
@@ -238,8 +279,8 @@ export var ManOrderStatus;
     ManOrderStatus["Processing"] = "PROCESSING";
     ManOrderStatus["Quoting"] = "QUOTING";
     ManOrderStatus["Shipping"] = "SHIPPING";
-})(ManOrderStatus || (ManOrderStatus = {}));
-export var ManPartIssue;
+})(ManOrderStatus = exports.ManOrderStatus || (exports.ManOrderStatus = {}));
+var ManPartIssue;
 (function (ManPartIssue) {
     ManPartIssue["BadLifecycle"] = "BAD_LIFECYCLE";
     ManPartIssue["InsufficientStock"] = "INSUFFICIENT_STOCK";
@@ -247,42 +288,42 @@ export var ManPartIssue;
     ManPartIssue["NoSelection"] = "NO_SELECTION";
     ManPartIssue["StockLow"] = "STOCK_LOW";
     ManPartIssue["Unavailable"] = "UNAVAILABLE";
-})(ManPartIssue || (ManPartIssue = {}));
-export var ManPartStatus;
+})(ManPartIssue = exports.ManPartIssue || (exports.ManPartIssue = {}));
+var ManPartStatus;
 (function (ManPartStatus) {
     ManPartStatus["Good"] = "GOOD";
     ManPartStatus["Issue"] = "ISSUE";
     ManPartStatus["Warn"] = "WARN";
-})(ManPartStatus || (ManPartStatus = {}));
-export var ManPathType;
+})(ManPartStatus = exports.ManPartStatus || (exports.ManPartStatus = {}));
+var ManPathType;
 (function (ManPathType) {
     ManPathType["Arc"] = "ARC";
     ManPathType["Vertex"] = "VERTEX";
-})(ManPathType || (ManPathType = {}));
-export var ManPaymentMethod;
+})(ManPathType = exports.ManPathType || (exports.ManPathType = {}));
+var ManPaymentMethod;
 (function (ManPaymentMethod) {
     ManPaymentMethod["CreditCard"] = "CREDIT_CARD";
     ManPaymentMethod["DirectApproval"] = "DIRECT_APPROVAL";
-})(ManPaymentMethod || (ManPaymentMethod = {}));
-export var ManQuoteCategory;
+})(ManPaymentMethod = exports.ManPaymentMethod || (exports.ManPaymentMethod = {}));
+var ManQuoteCategory;
 (function (ManQuoteCategory) {
     ManQuoteCategory["Assembly"] = "ASSEMBLY";
     ManQuoteCategory["Bom"] = "BOM";
     ManQuoteCategory["Fabrication"] = "FABRICATION";
     ManQuoteCategory["Nre"] = "NRE";
     ManQuoteCategory["Shipping"] = "SHIPPING";
-})(ManQuoteCategory || (ManQuoteCategory = {}));
-export var ManShippingCarrier;
+})(ManQuoteCategory = exports.ManQuoteCategory || (exports.ManQuoteCategory = {}));
+var ManShippingCarrier;
 (function (ManShippingCarrier) {
     ManShippingCarrier["Ups"] = "UPS";
     ManShippingCarrier["Usps"] = "USPS";
-})(ManShippingCarrier || (ManShippingCarrier = {}));
-export var ManSide;
+})(ManShippingCarrier = exports.ManShippingCarrier || (exports.ManShippingCarrier = {}));
+var ManSide;
 (function (ManSide) {
     ManSide["Bottom"] = "BOTTOM";
     ManSide["Top"] = "TOP";
-})(ManSide || (ManSide = {}));
-export var ManSilkScreenColour;
+})(ManSide = exports.ManSide || (exports.ManSide = {}));
+var ManSilkScreenColour;
 (function (ManSilkScreenColour) {
     ManSilkScreenColour["Black"] = "BLACK";
     ManSilkScreenColour["Blue"] = "BLUE";
@@ -290,8 +331,8 @@ export var ManSilkScreenColour;
     ManSilkScreenColour["Red"] = "RED";
     ManSilkScreenColour["White"] = "WHITE";
     ManSilkScreenColour["Yellow"] = "YELLOW";
-})(ManSilkScreenColour || (ManSilkScreenColour = {}));
-export var ManSolderMaskColour;
+})(ManSilkScreenColour = exports.ManSilkScreenColour || (exports.ManSilkScreenColour = {}));
+var ManSolderMaskColour;
 (function (ManSolderMaskColour) {
     ManSolderMaskColour["Black"] = "BLACK";
     ManSolderMaskColour["Blue"] = "BLUE";
@@ -304,22 +345,22 @@ export var ManSolderMaskColour;
     ManSolderMaskColour["Transparent"] = "TRANSPARENT";
     ManSolderMaskColour["White"] = "WHITE";
     ManSolderMaskColour["Yellow"] = "YELLOW";
-})(ManSolderMaskColour || (ManSolderMaskColour = {}));
-export var ManSourcing;
+})(ManSolderMaskColour = exports.ManSolderMaskColour || (exports.ManSolderMaskColour = {}));
+var ManSourcing;
 (function (ManSourcing) {
     ManSourcing["Altimade"] = "ALTIMADE";
     ManSourcing["Consign"] = "CONSIGN";
     ManSourcing["Dnp"] = "DNP";
-})(ManSourcing || (ManSourcing = {}));
-export var ManViolationType;
+})(ManSourcing = exports.ManSourcing || (exports.ManSourcing = {}));
+var ManViolationType;
 (function (ManViolationType) {
     ManViolationType["Inconsistent"] = "INCONSISTENT";
     ManViolationType["TooBig"] = "TOO_BIG";
     ManViolationType["TooSmall"] = "TOO_SMALL";
     ManViolationType["Unknown"] = "UNKNOWN";
     ManViolationType["Unsupported"] = "UNSUPPORTED";
-})(ManViolationType || (ManViolationType = {}));
-export var SupNexarFeatureId;
+})(ManViolationType = exports.ManViolationType || (exports.ManViolationType = {}));
+var SupNexarFeatureId;
 (function (SupNexarFeatureId) {
     SupNexarFeatureId["CadModels"] = "CAD_MODELS";
     SupNexarFeatureId["Datasheets"] = "DATASHEETS";
@@ -330,8 +371,8 @@ export var SupNexarFeatureId;
     SupNexarFeatureId["SpellingCorrections"] = "SPELLING_CORRECTIONS";
     SupNexarFeatureId["Suggestions"] = "SUGGESTIONS";
     SupNexarFeatureId["TechSpecs"] = "TECH_SPECS";
-})(SupNexarFeatureId || (SupNexarFeatureId = {}));
-export var SupPartLifeCycle;
+})(SupNexarFeatureId = exports.SupNexarFeatureId || (exports.SupNexarFeatureId = {}));
+var SupPartLifeCycle;
 (function (SupPartLifeCycle) {
     SupPartLifeCycle["Active"] = "ACTIVE";
     SupPartLifeCycle["ActiveUnconfirmed"] = "ACTIVE_UNCONFIRMED";
@@ -343,124 +384,27 @@ export var SupPartLifeCycle;
     SupPartLifeCycle["Nrfnd"] = "NRFND";
     SupPartLifeCycle["Transferred"] = "TRANSFERRED";
     SupPartLifeCycle["Unknown"] = "UNKNOWN";
-})(SupPartLifeCycle || (SupPartLifeCycle = {}));
-export var SupPlanTier;
+})(SupPartLifeCycle = exports.SupPartLifeCycle || (exports.SupPartLifeCycle = {}));
+var SupPlanTier;
 (function (SupPlanTier) {
     SupPlanTier["Basic"] = "BASIC";
     SupPlanTier["Enterprise"] = "ENTERPRISE";
     SupPlanTier["Free"] = "FREE";
     SupPlanTier["Pro"] = "PRO";
-})(SupPlanTier || (SupPlanTier = {}));
-export var SupRole;
+})(SupPlanTier = exports.SupPlanTier || (exports.SupPlanTier = {}));
+var SupRole;
 (function (SupRole) {
     SupRole["Cadmodels"] = "CADMODELS";
     SupRole["Distributor"] = "DISTRIBUTOR";
     SupRole["Internal"] = "INTERNAL";
     SupRole["Nexarinternal"] = "NEXARINTERNAL";
-})(SupRole || (SupRole = {}));
-export var SupSortDirection;
+})(SupRole = exports.SupRole || (exports.SupRole = {}));
+var SupSortDirection;
 (function (SupSortDirection) {
     SupSortDirection["Asc"] = "asc";
     SupSortDirection["Desc"] = "desc";
-})(SupSortDirection || (SupSortDirection = {}));
-export const MpnSearchDocument = gql `
-    query mpnSearch($q: String, $country: String!, $currency: String!, $start: Int, $limit: Int, $sortDir: SupSortDirection, $inStockOnly: Boolean, $filters: Map, $distributorApi: Boolean, $distributorApiTimeout: String!, $authorizedOnly: Boolean!) {
-  supSearchMpn(
-    q: $q
-    country: $country
-    currency: $currency
-    start: $start
-    limit: $limit
-    sortDir: $sortDir
-    inStockOnly: $inStockOnly
-    filters: $filters
-    distributorApi: $distributorApi
-    distributorApiTimeout: $distributorApiTimeout
-  ) {
-    hits
-    appliedFilters {
-      shortname
-      name
-      values
-      displayValues
-    }
-    results {
-      _cacheId
-      akaMpn
-      description
-      part {
-        _cacheId
-        bestDatasheet {
-          url
-        }
-        bestImage {
-          url
-        }
-        category {
-          id
-        }
-        descriptions {
-          text
-        }
-        freeSampleUrl
-        id
-        manufacturer {
-          id
-          isVerified
-          name
-        }
-        manufacturerUrl
-        medianPrice1000 {
-          _cacheId
-          convertedCurrency
-          convertedPrice
-        }
-        mpn
-        sellers(authorizedOnly: $authorizedOnly) {
-          _cacheId
-          company {
-            homepageUrl
-            id
-            isDistributorApi
-            isVerified
-            name
-            slug
-          }
-          isAuthorized
-          isBroker
-          isRfq
-          offers {
-            _cacheId
-            clickUrl
-            id
-            inventoryLevel
-            moq
-            packaging
-            prices {
-              _cacheId
-              conversionRate
-              convertedCurrency
-              convertedPrice
-              currency
-              price
-              quantity
-            }
-            sku
-            updated
-          }
-        }
-        series {
-          id
-          name
-          url
-        }
-        slug
-        v3uid
-      }
-    }
-  }
-}
-    `;
+})(SupSortDirection = exports.SupSortDirection || (exports.SupSortDirection = {}));
+exports.MpnSearchDocument = (0, client_1.gql)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    query mpnSearch($q: String, $country: String!, $currency: String!, $start: Int, $limit: Int, $sortDir: SupSortDirection, $inStockOnly: Boolean, $filters: Map, $distributorApi: Boolean, $distributorApiTimeout: String!, $authorizedOnly: Boolean!) {\n  supSearchMpn(\n    q: $q\n    country: $country\n    currency: $currency\n    start: $start\n    limit: $limit\n    sortDir: $sortDir\n    inStockOnly: $inStockOnly\n    filters: $filters\n    distributorApi: $distributorApi\n    distributorApiTimeout: $distributorApiTimeout\n  ) {\n    hits\n    appliedFilters {\n      shortname\n      name\n      values\n      displayValues\n    }\n    results {\n      _cacheId\n      akaMpn\n      description\n      part {\n        _cacheId\n        bestDatasheet {\n          url\n        }\n        bestImage {\n          url\n        }\n        category {\n          id\n        }\n        descriptions {\n          text\n        }\n        freeSampleUrl\n        id\n        manufacturer {\n          id\n          isVerified\n          name\n        }\n        manufacturerUrl\n        medianPrice1000 {\n          _cacheId\n          convertedCurrency\n          convertedPrice\n        }\n        mpn\n        sellers(authorizedOnly: $authorizedOnly) {\n          _cacheId\n          company {\n            homepageUrl\n            id\n            isDistributorApi\n            isVerified\n            name\n            slug\n          }\n          isAuthorized\n          isBroker\n          isRfq\n          offers {\n            _cacheId\n            clickUrl\n            id\n            inventoryLevel\n            moq\n            packaging\n            prices {\n              _cacheId\n              conversionRate\n              convertedCurrency\n              convertedPrice\n              currency\n              price\n              quantity\n            }\n            sku\n            updated\n          }\n        }\n        series {\n          id\n          name\n          url\n        }\n        slug\n        v3uid\n      }\n    }\n  }\n}\n    "], ["\n    query mpnSearch($q: String, $country: String!, $currency: String!, $start: Int, $limit: Int, $sortDir: SupSortDirection, $inStockOnly: Boolean, $filters: Map, $distributorApi: Boolean, $distributorApiTimeout: String!, $authorizedOnly: Boolean!) {\n  supSearchMpn(\n    q: $q\n    country: $country\n    currency: $currency\n    start: $start\n    limit: $limit\n    sortDir: $sortDir\n    inStockOnly: $inStockOnly\n    filters: $filters\n    distributorApi: $distributorApi\n    distributorApiTimeout: $distributorApiTimeout\n  ) {\n    hits\n    appliedFilters {\n      shortname\n      name\n      values\n      displayValues\n    }\n    results {\n      _cacheId\n      akaMpn\n      description\n      part {\n        _cacheId\n        bestDatasheet {\n          url\n        }\n        bestImage {\n          url\n        }\n        category {\n          id\n        }\n        descriptions {\n          text\n        }\n        freeSampleUrl\n        id\n        manufacturer {\n          id\n          isVerified\n          name\n        }\n        manufacturerUrl\n        medianPrice1000 {\n          _cacheId\n          convertedCurrency\n          convertedPrice\n        }\n        mpn\n        sellers(authorizedOnly: $authorizedOnly) {\n          _cacheId\n          company {\n            homepageUrl\n            id\n            isDistributorApi\n            isVerified\n            name\n            slug\n          }\n          isAuthorized\n          isBroker\n          isRfq\n          offers {\n            _cacheId\n            clickUrl\n            id\n            inventoryLevel\n            moq\n            packaging\n            prices {\n              _cacheId\n              conversionRate\n              convertedCurrency\n              convertedPrice\n              currency\n              price\n              quantity\n            }\n            sku\n            updated\n          }\n        }\n        series {\n          id\n          name\n          url\n        }\n        slug\n        v3uid\n      }\n    }\n  }\n}\n    "])));
 /**
  * __useMpnSearchQuery__
  *
@@ -487,11 +431,14 @@ export const MpnSearchDocument = gql `
  *   },
  * });
  */
-export function useMpnSearchQuery(baseOptions) {
-    const options = Object.assign(Object.assign({}, defaultOptions), baseOptions);
-    return Apollo.useQuery(MpnSearchDocument, options);
+function useMpnSearchQuery(baseOptions) {
+    var options = __assign(__assign({}, defaultOptions), baseOptions);
+    return Apollo.useQuery(exports.MpnSearchDocument, options);
 }
-export function useMpnSearchLazyQuery(baseOptions) {
-    const options = Object.assign(Object.assign({}, defaultOptions), baseOptions);
-    return Apollo.useLazyQuery(MpnSearchDocument, options);
+exports.useMpnSearchQuery = useMpnSearchQuery;
+function useMpnSearchLazyQuery(baseOptions) {
+    var options = __assign(__assign({}, defaultOptions), baseOptions);
+    return Apollo.useLazyQuery(exports.MpnSearchDocument, options);
 }
+exports.useMpnSearchLazyQuery = useMpnSearchLazyQuery;
+var templateObject_1;

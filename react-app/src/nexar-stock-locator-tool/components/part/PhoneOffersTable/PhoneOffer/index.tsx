@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { deviceWidths } from "../../../../lib";
 import AngleDown from "../../../icons/AngleDown";
@@ -15,7 +15,7 @@ import PriceTable from "./PriceTable/Index";
 import {
   SupPartResult as ResultType,
   SupPartSeller as SellerType,
-} from "../../../../lib/graphql/generated";
+} from "../../../../modules/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
 type Props = {
@@ -32,14 +32,7 @@ const PhoneOffer = ({ country, currency, result, seller, theme }: Props) => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <StyledPhoneOffer
-      onClick={handleClick}
-      // style={{
-      //   borderWidth: "1px 0px",
-      //   borderStyle: "solid",
-      //   borderColor: theme.tint,
-      // }}
-    >
+    <StyledPhoneOffer onClick={handleClick}>
       <OfferTitle>
         <StyledAngle style={{ color: theme.text }}>
           {isExpanded ? <AngleUp /> : <AngleDown />}

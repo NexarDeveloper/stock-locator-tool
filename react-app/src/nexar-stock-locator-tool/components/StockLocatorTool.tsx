@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { runQuery } from "../nexarQuery";
-import SearchForm from "./SearchForm";
-import SearchResults from "./SearchResults";
+import SearchForm from "./searchForm";
+import SearchResults from "./searchResults";
 import styled from "styled-components";
-import { SupPartResultSet } from "../lib/graphql/generated";
+import { SupPartResultSet } from "../modules/graphql/generated";
 import NoResultsFound from "./NoResultsFound";
 import WebFont from "webfontloader";
 import Footer from "./Footer";

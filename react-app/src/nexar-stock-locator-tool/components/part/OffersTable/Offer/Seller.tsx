@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 import { deviceWidths } from "../../../../lib";
 import { getFormattedNumber } from "../../../../lib";
 import {
   SupOffer as Offer,
   SupPartSeller as SellerType,
-} from "../../../../lib/graphql/generated";
+} from "../../../../modules/graphql/generated";
 import { IncomingColors } from "../../../../types";
 
 type Props = {
@@ -84,7 +85,6 @@ const StyledExpander = styled.div`
   height: 15px;
   line-height: 12px;
   font-size: 7px;
-  /* display: block; */
   margin-right: 10px;
   border-radius: 40px;
   text-align: center;

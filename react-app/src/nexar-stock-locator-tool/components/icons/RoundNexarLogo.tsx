@@ -1,3 +1,5 @@
+import React from "react";
+
 export const RoundNexarLogo = () => (
   <svg
     width="25"

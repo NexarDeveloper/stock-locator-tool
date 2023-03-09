@@ -1,3 +1,5 @@
+import React from "react";
+
 const MagnifyingGlass = () => (
   <svg viewBox="0 0 14.99 14.99">
     <path

@@ -50,7 +50,8 @@ const Updated = ({ offer, seller, theme }: Props) => {
 };
 
 const StyledUpdated = styled.td`
-  padding: 6px 6px 6px 40px;
+  padding: 6px;
+  text-align: right;
   font-size: 13px;
   display: table-cell;
   vertical-align: middle;
