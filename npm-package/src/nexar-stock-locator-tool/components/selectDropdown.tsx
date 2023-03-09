@@ -132,6 +132,7 @@ const DropdownTitle = styled.button`
   border-radius: 4px;
   background-color: white;
   color: black;
+  padding: 0px 8px;
 
   div {
     margin-right: 24px;
