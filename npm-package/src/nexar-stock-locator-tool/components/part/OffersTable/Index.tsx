@@ -45,7 +45,13 @@ const OffersTable = ({
               </th>
             )}
             {!hideColumns?.sku && (
-              <th style={{ width: "11.4%", color: theme.tableHeaderText }}>
+              <th
+                style={{
+                  textAlign: "left",
+                  width: "11.4%",
+                  color: theme.tableHeaderText,
+                }}
+              >
                 SKU
               </th>
             )}
