@@ -10,7 +10,7 @@ type Props = {
 
 const Sku = ({ offer, theme }: Props) => {
   return (
-    <td>
+    <td align="left" style={{ padding: "4px 6px" }}>
       <StyledSku
         href={offer.clickUrl}
         rel="nofollow"

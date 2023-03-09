@@ -22,7 +22,11 @@ var OffersTable = function (_a) {
                 react_1.default.createElement("tr", null,
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.isAuthorized) && (react_1.default.createElement("th", { style: { width: "22px", color: theme.tableHeaderText } })),
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.distributor) && (react_1.default.createElement("th", { style: { width: "18.1%", color: theme.tableHeaderText } }, "Distributor")),
-                    !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.sku) && (react_1.default.createElement("th", { style: { width: "11.4%", color: theme.tableHeaderText } }, "SKU")),
+                    !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.sku) && (react_1.default.createElement("th", { style: {
+                            textAlign: "left",
+                            width: "11.4%",
+                            color: theme.tableHeaderText,
+                        } }, "SKU")),
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.stock) && (react_1.default.createElement("th", { style: { textAlign: "right", color: theme.tableHeaderText } }, "Stock")),
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.moq) && (react_1.default.createElement("th", { style: { textAlign: "right", color: theme.tableHeaderText } }, "MOQ")),
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.cta) && react_1.default.createElement("th", null),
