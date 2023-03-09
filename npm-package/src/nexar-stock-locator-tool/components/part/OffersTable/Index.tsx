@@ -99,8 +99,7 @@ const OffersTable = ({
             {!hideColumns?.updated && (
               <th
                 style={{
-                  paddingLeft: "40px",
-                  width: "60px",
+                  textAlign: "right",
                   color: theme.tableHeaderText,
                 }}
               >

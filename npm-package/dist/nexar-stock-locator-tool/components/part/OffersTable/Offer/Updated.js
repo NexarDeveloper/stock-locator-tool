@@ -34,6 +34,6 @@ var Updated = function (_a) {
     }, [seller.company.isDistributorApi, offer.updated]);
     return (react_1.default.createElement(StyledUpdated, { title: "Data updated ".concat(timeAgo.long), style: { color: theme.text } }, timeAgo.short));
 };
-var StyledUpdated = styled_components_1.default.td(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 6px 6px 6px 40px;\n  font-size: 13px;\n  display: table-cell;\n  vertical-align: middle;\n"], ["\n  padding: 6px 6px 6px 40px;\n  font-size: 13px;\n  display: table-cell;\n  vertical-align: middle;\n"])));
+var StyledUpdated = styled_components_1.default.td(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 6px;\n  text-align: right;\n  font-size: 13px;\n  display: table-cell;\n  vertical-align: middle;\n"], ["\n  padding: 6px;\n  text-align: right;\n  font-size: 13px;\n  display: table-cell;\n  vertical-align: middle;\n"])));
 exports.default = Updated;
 var templateObject_1;

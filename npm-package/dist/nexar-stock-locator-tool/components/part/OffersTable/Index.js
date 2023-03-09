@@ -37,8 +37,7 @@ var OffersTable = function (_a) {
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.price1000) && (react_1.default.createElement("th", { style: { textAlign: "right", color: theme.tableHeaderText } }, "1000")),
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.price10000) && (react_1.default.createElement("th", { style: { textAlign: "right", color: theme.tableHeaderText } }, "10000")),
                     !(hideColumns === null || hideColumns === void 0 ? void 0 : hideColumns.updated) && (react_1.default.createElement("th", { style: {
-                            paddingLeft: "40px",
-                            width: "60px",
+                            textAlign: "right",
                             color: theme.tableHeaderText,
                         } }, "Updated")))),
             react_1.default.createElement("tbody", null, sellers.map(function (seller, sellerIndex) { return (react_1.default.createElement(Index_1.default, { country: country, key: seller.company.id, result: result, seller: seller, sellerIndex: sellerIndex, theme: theme, hideColumns: hideColumns })); })))));
