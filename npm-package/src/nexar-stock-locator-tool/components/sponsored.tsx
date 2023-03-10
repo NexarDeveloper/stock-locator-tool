@@ -53,7 +53,6 @@ const Sponsored = ({ theme }: SponsoredProps) => {
 const SponsoredContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 20px;
   position: relative;
 
   span {
@@ -62,6 +61,7 @@ const SponsoredContainer = styled.div`
   }
 
   svg {
+    display: inline;
     height: 11px;
     margin-left: 4px;
     width: 11px;

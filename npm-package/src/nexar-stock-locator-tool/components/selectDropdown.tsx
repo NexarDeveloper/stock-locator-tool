@@ -117,7 +117,6 @@ export const SelectDropdown = ({
 const DropdownContainer = styled.div`
   position: relative;
   @media (max-width: ${deviceWidths.phone}) {
-    width: 100%;
     margin-bottom: 4px;
   }
 `;

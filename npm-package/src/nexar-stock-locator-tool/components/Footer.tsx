@@ -33,6 +33,7 @@ const Footer = ({ theme }: FooterProps) => {
 
 const FooterContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 11px;
   line-height: 8px;
@@ -47,6 +48,7 @@ const FooterContainer = styled.div`
 const FooterText = styled.div`
   padding-left: 12px;
   line-height: 16px;
+  text-align: left;
 
   a {
     text-decoration: none;
@@ -55,7 +57,7 @@ const FooterText = styled.div`
 
 const NexarLogo = styled.div`
   display: inline-block;
-  padding: 4px 12px;
+  padding: 12px;
   border-radius: 4px;
   position: relative;
 `;
