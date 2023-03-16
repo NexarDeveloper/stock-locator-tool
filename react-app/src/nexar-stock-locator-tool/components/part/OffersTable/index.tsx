@@ -5,7 +5,7 @@ import {
 } from "../../../modules/graphql/generated";
 import styled from "styled-components";
 
-import Offer from "./Offer/Index";
+import Offer from "./Offer";
 import { IncomingColors, IncomingColumns } from "../../../types";
 
 type Props = {

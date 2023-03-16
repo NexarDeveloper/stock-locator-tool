@@ -1,5 +1,5 @@
 import { getData as getCountries } from "country-list";
-import SelectDropdown from "./selectDropdown";
+import SelectDropdown from "./SelectDropdown";
 import styled from "styled-components";
 import { deviceWidths } from "../lib";
 import MagnifyingGlass from "./icons/magnifyingGlass";

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { runQuery } from "../nexarQuery";
-import SearchForm from "./searchForm";
-import SearchResults from "./searchResults";
+import SearchForm from "./SearchForm";
+import SearchResults from "./SearchResults";
 import styled from "styled-components";
 import { SupPartResultSet } from "../modules/graphql/generated";
 import NoResultsFound from "./NoResultsFound";

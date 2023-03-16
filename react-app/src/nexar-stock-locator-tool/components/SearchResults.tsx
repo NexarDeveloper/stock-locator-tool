@@ -2,7 +2,7 @@ import React from "react";
 import { SupPartResultSet } from "../modules/graphql/generated";
 import styled from "styled-components";
 import Part from "./part";
-import Sponsored from "./sponsored";
+import Sponsored from "./Sponsored";
 import { IncomingColors, IncomingColumns, IncomingParams } from "../types";
 import { deviceWidths } from "../lib";
 

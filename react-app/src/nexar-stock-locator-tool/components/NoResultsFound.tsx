@@ -1,8 +1,8 @@
 import React from "react";
 import { SupPartResultSet } from "../modules/graphql/generated";
-import SearchResultsPlaceholder from "./searchResultsPlaceholder";
-import Sponsored from "./sponsored";
-import { ResultsHeader, ResultsText } from "./searchResults";
+import SearchResultsPlaceholder from "./SearchResultsPlaceholder";
+import Sponsored from "./Sponsored";
+import { ResultsHeader, ResultsText } from "./SearchResults";
 import { IncomingColors } from "../types";
 
 type Props = {

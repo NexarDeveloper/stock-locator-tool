@@ -4,13 +4,13 @@ import {
   SupPartResult as Result,
   SupPartSeller as SellerType,
 } from "../../../../modules/graphql/generated";
-import IsAuthorized from "./isAuthorized";
+import IsAuthorized from "./IsAuthorized";
 import Seller from "./Seller";
 import Sku from "./Sku";
 import Stock from "./Stock";
 import Moq from "./Moq";
 import Cta from "./Cta";
-import Currency from "./currency";
+import Currency from "./Currency";
 import Price from "./Price";
 import Updated from "./Updated";
 import { IncomingColors, IncomingColumns } from "../../../../types";

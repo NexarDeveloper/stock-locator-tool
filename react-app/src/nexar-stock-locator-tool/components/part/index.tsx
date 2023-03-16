@@ -5,7 +5,7 @@ import useExpansions, {
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { SupPartResult as Result } from "../../modules/graphql/generated";
 import Header from "./Header";
-import OffersTable from "./OffersTable/Index";
+import OffersTable from "./OffersTable";
 import PhoneOffersTable from "./PhoneOffersTable";
 import ShowButton from "./ShowButton";
 import styled from "styled-components";
