@@ -2,9 +2,9 @@
 
 The Stock Locator Tool is a React component that can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Nexar API](https://nexar.com/).
 
-This repository contains three folders: express-app, npm-package, and react-app. The express-app folder is an example of how to fetch Nexar access tokens to provide the tool with. The npm-package folder contains the resources to develop and publish the tool's npm package, so if you aren't internal, you can ignore this folder. Finally, there is the react-app folder which contains the source code for the tool in an example react project.
+This repository includes an `example-implementations` folder which, includes examples of how to fetch Nexar access tokens to provide the tool with and an example React app that uses the tool.
 
-Please see the rest of the README below to see how to embed the tool into your own project.
+Please see the rest of the README below to see how to embed the tool into your own project. Information on the development of the tool can be found at the bottom.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ You must have [node](https://nodejs.org/en/) installed.
 
 ## Hosting the Tool locally
 
-This repository is set up with an express app for fetching and caching tokens as well as a react app that displays the Stock Locator tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
+The `examples-implementations` folder includes an example express app for fetching and caching tokens as well as a react app that displays the Stock Locator tool using the token to query the Nexar API. To start hosting the tool locally you will need to clone the repository using the following command:
 
 ```
 gh repo clone NexarDeveloper/stock-locator-tool
@@ -22,13 +22,13 @@ gh repo clone NexarDeveloper/stock-locator-tool
 
 ### Starting up the express app
 
-You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of stock-locator-tool/express-app/index.js.
+You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of `stock-locator-tool/example-implementations/express-app/index.js`.
 
 In the `express-app` folder use the command `node index.js` to start up the app.
 
 ### Starting up the react app
 
-If you aren't already set up with react, in the folder `stock-locator-tool/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
+If you aren't already set up with react, in the folder `stock-locator-tool/example-implementations/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
 
 Then to install the dependencies required for the tool you can use the command:
 
@@ -48,7 +48,7 @@ We have released the tool as an [NPM package](https://www.npmjs.com/package/@alt
 
 ### Drag and Drop
 
-In `stock-locator-tool/react-app/src` you will find the folder `nexar-stock-locator-tool` which contains all of the code for the component. To embed the tool simply drag and drop this folder into your project and install any missing dependencies - these are listed at the bottom of the page.
+If you wish to dive into the code and make your own changes, in `stock-locator-tool/src` you will find the folder `nexar-stock-locator-tool` which contains all of the code for the component. To embed the tool you can simply drag and drop this folder into your project and install any missing dependencies - these are listed at the bottom of the page.
 
 ## Parameters
 
@@ -164,6 +164,34 @@ hideColumns={{
     price10000: false,
     updated: false,
 }}
+```
+
+## Development
+
+Commits to the main branch will trigger a GitHub action that will automatically publish a minor release to the package. Alternatively, if you wish to manually publish a package please follow the below commands:
+
+You will need to be logged in to NPM and to be a member of the [altiumnexar](https://www.npmjs.com/settings/altiumnexar/packages). To login on the command line use the following command.
+
+```
+npm login
+```
+
+Once the appropriate changes have been made use the following command which will make a fresh build of the package into the `dist` folder.
+
+```
+npm run build
+```
+
+Then switch the version you are working using the following command.
+
+```
+npm version (major|minor|patch)
+```
+
+Then to publish the newly built package use the following command.
+
+```
+npm publish --access public
 ```
 
 ### Tool Dependencies
