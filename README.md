@@ -176,7 +176,11 @@ You will need to be logged in to NPM and to be a member of the [altiumnexar](htt
 npm login
 ```
 
-Once the appropriate changes have been made use the following command which will make a fresh build of the package into the `dist` folder.
+Once the appropriate changes have been made use the following commands which will clean the existing build and make a fresh build of the package into the `dist` folder.
+
+```
+npm run clean
+```
 
 ```
 npm run build
