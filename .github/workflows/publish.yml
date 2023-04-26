@@ -15,8 +15,6 @@ jobs:
         with:
           node-version: 16.x
           registry-url: https://registry.npmjs.org
-      - name: version
-        run: npm version minor
       - name: build
         run: npm run build
       - name: publish
