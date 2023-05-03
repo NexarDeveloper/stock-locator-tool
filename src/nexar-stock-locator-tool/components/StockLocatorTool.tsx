@@ -102,7 +102,9 @@ export const StockLocatorTool = ({
   }, [styles?.font]);
 
   useEffect(() => {
-    handleFormSubmit(searchParameters.q ?? "", country, currency);
+    if (searchParameters.q) {
+      handleFormSubmit(searchParameters.q, country, currency);
+    }
   }, []);
 
   return (

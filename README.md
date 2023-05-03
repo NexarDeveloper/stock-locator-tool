@@ -2,9 +2,13 @@
 
 The Stock Locator Tool is a React component that can be embedded into your own project. It provides search functionality to display offers and stock levels for a part, powered by the [Nexar API](https://nexar.com/).
 
-This repository includes an `example-implementations` folder which, includes examples of how to fetch Nexar access tokens to provide the tool with and an example React app that uses the tool.
+This repository includes an `examples` folder which, includes examples of how to fetch Nexar access tokens to provide the tool with and an examples of how you may wish to embed the tool. Below, a couple of examples are outlined:
 
-Please see the rest of the README below to see how to embed the tool into your own project. Information on the development of the tool can be found at the bottom.
+**Search -** This is the default experience- there is a search form and a list of results are displayed. An example of this can be found at `examples/react-app`
+
+**Single Part -** This is for if you just want to display the offers for a given part without the searching functionality. An example can be found at `examples/single-part-example`. This is achieved using the parameters: `limit`, `disableSearch`, and `q` which are explained in more detail [below](#Parameters)
+
+Please see the rest of the README below to see how to embed the tool into your own project.
 
 ## Prerequisites
 
@@ -22,13 +26,13 @@ gh repo clone NexarDeveloper/stock-locator-tool
 
 ### Starting up the express app
 
-You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of `stock-locator-tool/example-implementations/express-app/index.js`.
+You will need to input your Nexar client ID and secret into the app. This client ID and secret must be from a Nexar app that has the supply scope. You can do this on line 7 of `stock-locator-tool/examples/express-app/index.js`.
 
 In the `express-app` folder use the command `node index.js` to start up the app.
 
 ### Starting up the react app
 
-If you aren't already set up with react, in the folder `stock-locator-tool/example-implementations/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
+If you aren't already set up with react, in the folder `stock-locator-tool/examples/react-app`, you will need to use the following commands: `npm install -g create-react-app` and `npm install --save react react-dom`
 
 Then to install the dependencies required for the tool you can use the command:
 
@@ -75,6 +79,7 @@ searchParameters = {{
     authorizedOnly?: boolean,
     country?: string,
     currency?: string,
+    disableSearch?: boolean,
     enableManufacturerLink?: boolean,
     expandOfferTable?: boolean,
     inStockOnly?: boolean,
