@@ -3,6 +3,7 @@ export type IncomingParams = {
   country?: string;
   currency?: string;
   enableManufacturerLink?: boolean;
+  disableSearch?: boolean;
   expandOfferTable?: boolean;
   inStockOnly?: boolean;
   limit?: number;

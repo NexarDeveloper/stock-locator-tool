@@ -101,20 +101,26 @@ export const StockLocatorTool = ({
     setFont(wantedFont);
   }, [styles?.font]);
 
+  useEffect(() => {
+    handleFormSubmit(searchParameters.q ?? "", country, currency);
+  }, []);
+
   return (
     <StyledStockLocatorTool
       style={{ fontFamily: `${font}`, backgroundColor: `${theme.background}` }}
     >
-      <SearchForm
-        query={query}
-        setQuery={setQuery}
-        country={country}
-        setCountry={setCountry}
-        currency={currency}
-        setCurrency={setCurrency}
-        handleFormSubmit={handleFormSubmit}
-        theme={theme}
-      />
+      {!searchParameters.disableSearch && (
+        <SearchForm
+          query={query}
+          setQuery={setQuery}
+          country={country}
+          setCountry={setCountry}
+          currency={currency}
+          setCurrency={setCurrency}
+          handleFormSubmit={handleFormSubmit}
+          theme={theme}
+        />
+      )}
       {hasResults && (
         <SearchResults
           country={country}
@@ -127,7 +133,12 @@ export const StockLocatorTool = ({
         />
       )}
       {!hasResults && (
-        <NoResultsFound query={lastSearch} response={response} theme={theme} />
+        <NoResultsFound
+          query={lastSearch}
+          response={response}
+          theme={theme}
+          searchParameters={searchParameters}
+        />
       )}
       <Footer theme={theme} />
     </StyledStockLocatorTool>

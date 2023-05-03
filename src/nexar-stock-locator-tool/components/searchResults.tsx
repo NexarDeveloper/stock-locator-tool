@@ -32,13 +32,15 @@ const SearchResults = ({
     <>
       {data.results && (
         <>
-          <ResultsHeader>
-            <ResultsText style={{ color: theme.text }}>
-              Showing {data.results.length}{" "}
-              {data.results.length === 1 ? "result" : "results"} for {query}
-            </ResultsText>
-            <Sponsored theme={theme} />
-          </ResultsHeader>
+          {!searchParameters.disableSearch && (
+            <ResultsHeader>
+              <ResultsText style={{ color: theme.text }}>
+                Showing {data.results.length}{" "}
+                {data.results.length === 1 ? "result" : "results"} for {query}
+              </ResultsText>
+              <Sponsored theme={theme} />
+            </ResultsHeader>
+          )}
           <div>
             {data.results.map((result) => (
               <Part

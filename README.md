@@ -60,6 +60,7 @@ _searchParameters_ is a mandatory attribute for the tool and includes your prefe
 | authorizedOnly         | boolean | Whether to only return offers from authorized dealers                      | false   | optional  |
 | country                | string  | Your user's ISO-3166-1 alpha-2 country code                                | US      | optional  |
 | currency               | string  | Your user's ISO-4217 currency code                                         | USD     | optional  |
+| disableSearch          | boolean | Whether to hide the search form                                            | false   | optional  |
 | enableManufacturerLink | boolean | Whether to enable direct-to-manufacturer links for parts in search results | false   | optional  |
 | expandOfferTable       | boolean | Whether to expand offer table by default                                   | false   | optional  |
 | inStockOnly            | boolean | Whether to only return parts that have stock available                     | false   | optional  |
